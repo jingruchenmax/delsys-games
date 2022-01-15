@@ -1,0 +1,1385 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0ef91efa296423fbbde98ce5af19ba, type: 3}
+  m_Name: Shape
+  m_EditorClassIdentifier: 
+  randomize: 1
+  seed: 2132
+  heightMapCompute: {fileID: 7200000, guid: b33d87d0482194cf2a21c78c2cc775f8, type: 3}
+  perturbVertices: 1
+  perturbCompute: {fileID: 7200000, guid: 0cc4782d709194aa5a22ed5e9ab8bf09, type: 3}
+  perturbStrength: 0.313
+  craterSettings:
+    enabled: 1
+    craterSeed: 5
+    numCraters: 500
+    craterSizeMinMax: {x: 0.01, y: 0.15}
+    rimSteepness: 0.42
+    rimWidth: 1.23
+    smoothMinMax: {x: 0.4, y: 1.5}
+    sizeDistribution: 0.675
+    cachedCraters:
+    - centre: {x: -0.62041676, y: 0.64252365, z: -0.44971812}
+      size: 0.01759896
+      floorHeight: -0.93829656
+      smoothness: 1.4071238
+    - centre: {x: -0.18477784, y: -0.8175008, z: 0.54548097}
+      size: 0.010075272
+      floorHeight: -0.8418136
+      smoothness: 1.49908
+    - centre: {x: -0.43557823, y: 0.57644373, z: -0.69136405}
+      size: 0.029229669
+      floorHeight: -0.5310797
+      smoothness: 1.2649708
+    - centre: {x: 0.50113755, y: 0.86395264, z: 0.04946792}
+      size: 0.011371334
+      floorHeight: -1.1730767
+      smoothness: 1.4832393
+    - centre: {x: 0.3386977, y: 0.83642656, z: 0.4308996}
+      size: 0.0267178
+      floorHeight: -0.79438555
+      smoothness: 1.2956713
+    - centre: {x: -0.68118984, y: 0.61750346, z: -0.39328086}
+      size: 0.010009972
+      floorHeight: -0.33167717
+      smoothness: 1.4998782
+    - centre: {x: -0.0015584868, y: 0.6410982, z: -0.76745725}
+      size: 0.012677466
+      floorHeight: -0.77719307
+      smoothness: 1.4672754
+    - centre: {x: 0.18016021, y: 0.14568858, z: -0.97278833}
+      size: 0.013277185
+      floorHeight: -0.90134513
+      smoothness: 1.4599454
+    - centre: {x: -0.9792609, y: -0.1595325, z: 0.12488949}
+      size: 0.010518322
+      floorHeight: -0.56159425
+      smoothness: 1.493665
+    - centre: {x: -0.70297146, y: -0.7075059, z: 0.0725714}
+      size: 0.014375323
+      floorHeight: -0.5162352
+      smoothness: 1.4465238
+    - centre: {x: 0.6933052, y: 0.7090331, z: -0.12884128}
+      size: 0.010761244
+      floorHeight: -0.42400756
+      smoothness: 1.490696
+    - centre: {x: -0.83328503, y: -0.19540459, z: -0.51715875}
+      size: 0.013112164
+      floorHeight: -0.5258059
+      smoothness: 1.4619625
+    - centre: {x: -0.61782074, y: 0.49393153, z: -0.6118245}
+      size: 0.021496395
+      floorHeight: -0.5052165
+      smoothness: 1.3594885
+    - centre: {x: 0.6789959, y: 0.38538775, z: 0.62485266}
+      size: 0.065508105
+      floorHeight: -0.2
+      smoothness: 0.8215676
+    - centre: {x: -0.5651737, y: 0.32715014, z: -0.75733185}
+      size: 0.015150205
+      floorHeight: -1.1029987
+      smoothness: 1.4370531
+    - centre: {x: -0.03633726, y: -0.6500123, z: 0.7590544}
+      size: 0.012622826
+      floorHeight: -1.1579685
+      smoothness: 1.4679433
+    - centre: {x: 0.32440194, y: -0.76161116, z: 0.56099176}
+      size: 0.020549217
+      floorHeight: -0.87109965
+      smoothness: 1.3710651
+    - centre: {x: 0.7767543, y: -0.37518692, z: -0.5058532}
+      size: 0.010715153
+      floorHeight: -1.130892
+      smoothness: 1.4912592
+    - centre: {x: -0.79772526, y: -0.11851974, z: -0.59125924}
+      size: 0.010544517
+      floorHeight: -1.0457797
+      smoothness: 1.4933448
+    - centre: {x: 0.2001271, y: 0.70717907, z: 0.67812014}
+      size: 0.015543302
+      floorHeight: -0.87251
+      smoothness: 1.4322486
+    - centre: {x: 0.5132765, y: -0.8529143, z: -0.095312715}
+      size: 0.012121149
+      floorHeight: -1.1636426
+      smoothness: 1.4740748
+    - centre: {x: 0.87774587, y: 0.0062734373, z: 0.47908542}
+      size: 0.0582824
+      floorHeight: -0.37720397
+      smoothness: 0.9098818
+    - centre: {x: -0.18219028, y: 0.8501832, z: -0.49395883}
+      size: 0.07751363
+      floorHeight: -0.31135896
+      smoothness: 0.6748335
+    - centre: {x: -0.3365942, y: 0.8834614, z: 0.32588384}
+      size: 0.023481084
+      floorHeight: -0.37766382
+      smoothness: 1.3352312
+    - centre: {x: -0.34368762, y: -0.7746045, z: 0.5309112}
+      size: 0.015088992
+      floorHeight: -1.1412464
+      smoothness: 1.4378012
+    - centre: {x: 0.43138757, y: -0.880685, z: 0.19570076}
+      size: 0.010827198
+      floorHeight: -0.83963823
+      smoothness: 1.4898897
+    - centre: {x: -0.95962685, y: 0.1428124, z: 0.24232376}
+      size: 0.010509973
+      floorHeight: -0.5619687
+      smoothness: 1.493767
+    - centre: {x: 0.60371, y: -0.65109533, z: 0.46000978}
+      size: 0.010656111
+      floorHeight: -0.82289034
+      smoothness: 1.4919809
+    - centre: {x: -0.41932154, y: 0.43067023, z: 0.7991824}
+      size: 0.0105784
+      floorHeight: -1.1268961
+      smoothness: 1.4929307
+    - centre: {x: -0.54160285, y: 0.4971059, z: 0.6779027}
+      size: 0.07502403
+      floorHeight: -0.2
+      smoothness: 0.7052618
+    - centre: {x: 0.83333033, y: -0.29940298, z: -0.4646703}
+      size: 0.027795391
+      floorHeight: -0.7682428
+      smoothness: 1.2825007
+    - centre: {x: 0.82565016, y: -0.026452594, z: -0.5635619}
+      size: 0.019604119
+      floorHeight: -0.72078156
+      smoothness: 1.3826163
+    - centre: {x: 0.92296696, y: 0.38416797, z: -0.023387313}
+      size: 0.011512809
+      floorHeight: -0.27953747
+      smoothness: 1.4815102
+    - centre: {x: -0.44276664, y: -0.66747344, z: 0.598696}
+      size: 0.013318909
+      floorHeight: -0.5215293
+      smoothness: 1.4594356
+    - centre: {x: 0.5782385, y: 0.61501336, z: -0.53609586}
+      size: 0.018338334
+      floorHeight: -1.0449293
+      smoothness: 1.398087
+    - centre: {x: -0.9178289, y: 0.31746885, z: 0.23833501}
+      size: 0.0152474465
+      floorHeight: -0.65873075
+      smoothness: 1.4358646
+    - centre: {x: 0.043570153, y: 0.98510766, z: -0.16632617}
+      size: 0.014210776
+      floorHeight: -0.4422405
+      smoothness: 1.448535
+    - centre: {x: -0.69363946, y: -0.59552914, z: -0.40522754}
+      size: 0.019680047
+      floorHeight: -1.0708331
+      smoothness: 1.3816882
+    - centre: {x: 0.47071478, y: 0.85101163, z: -0.23282349}
+      size: 0.0749023
+      floorHeight: -0.2
+      smoothness: 0.7067496
+    - centre: {x: -0.2537334, y: -0.20432661, z: 0.94544697}
+      size: 0.040175743
+      floorHeight: -0.7207409
+      smoothness: 1.1311854
+    - centre: {x: -0.009606997, y: -0.9717214, z: -0.23593462}
+      size: 0.010817871
+      floorHeight: -1.1557583
+      smoothness: 1.4900038
+    - centre: {x: 0.4029266, y: -0.7600006, z: 0.50995016}
+      size: 0.012470326
+      floorHeight: -0.9693067
+      smoothness: 1.4698071
+    - centre: {x: 0.9939001, y: -0.10067699, z: -0.045018792}
+      size: 0.010023501
+      floorHeight: -0.7979263
+      smoothness: 1.4997127
+    - centre: {x: 0.6081419, y: -0.7533873, z: 0.25014207}
+      size: 0.074664764
+      floorHeight: -0.2
+      smoothness: 0.70965296
+    - centre: {x: -0.24381858, y: 0.48460174, z: 0.8400676}
+      size: 0.01376628
+      floorHeight: -0.9317529
+      smoothness: 1.4539677
+    - centre: {x: 0.051731825, y: -0.31208736, z: 0.9486439}
+      size: 0.010654649
+      floorHeight: -0.43999347
+      smoothness: 1.4919988
+    - centre: {x: 0.6177636, y: 0.78558886, z: 0.034903646}
+      size: 0.013951499
+      floorHeight: -0.9221157
+      smoothness: 1.4517039
+    - centre: {x: -0.1544902, y: -0.82592154, z: 0.5422051}
+      size: 0.027907696
+      floorHeight: -0.47794732
+      smoothness: 1.2811282
+    - centre: {x: -0.6874531, y: 0.42854404, z: -0.58630896}
+      size: 0.015211202
+      floorHeight: -1.0129133
+      smoothness: 1.4363075
+    - centre: {x: -0.0059069954, y: 0.94247216, z: -0.33423245}
+      size: 0.013886868
+      floorHeight: -1.1535398
+      smoothness: 1.4524938
+    - centre: {x: -0.68394184, y: -0.34414905, z: -0.6432612}
+      size: 0.09371484
+      floorHeight: -0.2
+      smoothness: 0.47681865
+    - centre: {x: -0.74009675, y: -0.2880841, z: 0.60767126}
+      size: 0.012893394
+      floorHeight: -1.0566567
+      smoothness: 1.4646363
+    - centre: {x: 0.81500465, y: -0.43612564, z: -0.38152564}
+      size: 0.018537119
+      floorHeight: -0.93563795
+      smoothness: 1.3956574
+    - centre: {x: 0.5476721, y: 0.122991204, z: 0.82760406}
+      size: 0.0120923575
+      floorHeight: -1.1026195
+      smoothness: 1.4744267
+    - centre: {x: 0.031701174, y: -0.72009957, z: -0.6931462}
+      size: 0.01210198
+      floorHeight: -1.1682618
+      smoothness: 1.4743091
+    - centre: {x: 0.0106979115, y: -0.54744923, z: -0.83677053}
+      size: 0.022077424
+      floorHeight: -0.93564427
+      smoothness: 1.3523871
+    - centre: {x: -0.52934116, y: -0.7544148, z: -0.3881446}
+      size: 0.013083565
+      floorHeight: -0.78555834
+      smoothness: 1.462312
+    - centre: {x: -0.39987668, y: 0.10599539, z: -0.91041946}
+      size: 0.04270658
+      floorHeight: -0.4368306
+      smoothness: 1.100253
+    - centre: {x: -0.30931693, y: -0.8326736, z: 0.45932314}
+      size: 0.011853299
+      floorHeight: -1.1120694
+      smoothness: 1.4773486
+    - centre: {x: 0.77685225, y: -0.36707625, z: 0.5116205}
+      size: 0.020752404
+      floorHeight: -0.81355023
+      smoothness: 1.3685818
+    - centre: {x: 0.19989544, y: -0.9177096, z: 0.3432941}
+      size: 0.094578326
+      floorHeight: -0.2
+      smoothness: 0.4662649
+    - centre: {x: -0.27716294, y: -0.94637245, z: -0.16601145}
+      size: 0.016261097
+      floorHeight: -1.0930034
+      smoothness: 1.4234755
+    - centre: {x: -0.5636122, y: 0.54808307, z: -0.6180179}
+      size: 0.010602747
+      floorHeight: -0.90700656
+      smoothness: 1.4926331
+    - centre: {x: -0.09324346, y: 0.6262513, z: 0.7740252}
+      size: 0.013938274
+      floorHeight: -0.3786551
+      smoothness: 1.4518656
+    - centre: {x: -0.0047972575, y: 0.6476854, z: 0.7618928}
+      size: 0.010966157
+      floorHeight: -0.5450355
+      smoothness: 1.4881914
+    - centre: {x: -0.19648454, y: 0.9805053, z: 0.0017992258}
+      size: 0.020511145
+      floorHeight: -0.67460644
+      smoothness: 1.3715304
+    - centre: {x: 0.8478267, y: -0.41163534, z: 0.3342845}
+      size: 0.014700347
+      floorHeight: -0.4797739
+      smoothness: 1.4425514
+    - centre: {x: -0.808068, y: 0.57069755, z: -0.14604962}
+      size: 0.013465108
+      floorHeight: -1.0571357
+      smoothness: 1.4576486
+    - centre: {x: -0.85718095, y: -0.5024747, z: 0.11295998}
+      size: 0.031855974
+      floorHeight: -0.2
+      smoothness: 1.2328714
+    - centre: {x: 0.192187, y: 0.104228444, z: -0.97580767}
+      size: 0.03918918
+      floorHeight: -0.50676376
+      smoothness: 1.1432434
+    - centre: {x: 0.9301262, y: -0.29707354, z: 0.21589935}
+      size: 0.0151237035
+      floorHeight: -0.5935417
+      smoothness: 1.437377
+    - centre: {x: -0.7044371, y: -0.036347948, z: -0.7088351}
+      size: 0.018285397
+      floorHeight: -0.9631337
+      smoothness: 1.3987341
+    - centre: {x: -0.4541508, y: -0.8802834, z: 0.13728869}
+      size: 0.031659674
+      floorHeight: -0.40967116
+      smoothness: 1.2352706
+    - centre: {x: -0.23507623, y: -0.0986966, z: 0.96695304}
+      size: 0.019246673
+      floorHeight: -0.6226871
+      smoothness: 1.3869851
+    - centre: {x: 0.7260882, y: -0.5661651, z: 0.39019606}
+      size: 0.019353587
+      floorHeight: -1.060352
+      smoothness: 1.3856784
+    - centre: {x: -0.1941225, y: 0.6239527, z: 0.7569673}
+      size: 0.018048765
+      floorHeight: -1.001968
+      smoothness: 1.4016262
+    - centre: {x: 0.19221638, y: 0.35486436, z: 0.9149449}
+      size: 0.02257721
+      floorHeight: -0.40500042
+      smoothness: 1.3462785
+    - centre: {x: 0.0305647, y: 0.37998605, z: -0.9244871}
+      size: 0.010105549
+      floorHeight: -0.9721839
+      smoothness: 1.4987099
+    - centre: {x: 0.5677782, y: -0.7155358, z: -0.40698445}
+      size: 0.013936511
+      floorHeight: -1.0805159
+      smoothness: 1.4518871
+    - centre: {x: 0.28609622, y: -0.16051544, z: 0.94466066}
+      size: 0.011638159
+      floorHeight: -1.1714638
+      smoothness: 1.4799781
+    - centre: {x: 0.74810475, y: -0.49312854, z: 0.44403097}
+      size: 0.0100558875
+      floorHeight: -1.0605444
+      smoothness: 1.4993169
+    - centre: {x: -0.31825355, y: -0.14901984, z: -0.93621993}
+      size: 0.010528535
+      floorHeight: -1.0139745
+      smoothness: 1.4935402
+    - centre: {x: 0.19732168, y: -0.35887027, z: -0.91229177}
+      size: 0.014522147
+      floorHeight: -0.2
+      smoothness: 1.4447293
+    - centre: {x: -0.37548357, y: 0.50458246, z: 0.7774372}
+      size: 0.04621581
+      floorHeight: -0.575559
+      smoothness: 1.0573623
+    - centre: {x: -0.2742425, y: 0.8915396, z: -0.3604833}
+      size: 0.013053841
+      floorHeight: -0.80314916
+      smoothness: 1.4626753
+    - centre: {x: 0.31524837, y: 0.9373417, z: -0.14835417}
+      size: 0.039321177
+      floorHeight: -0.7886032
+      smoothness: 1.14163
+    - centre: {x: -0.2841377, y: 0.86878914, z: 0.40555045}
+      size: 0.013188616
+      floorHeight: -1.1644651
+      smoothness: 1.461028
+    - centre: {x: -0.06582722, y: 0.5002105, z: -0.8633981}
+      size: 0.010646571
+      floorHeight: -1.1072224
+      smoothness: 1.4920975
+    - centre: {x: 0.6313964, y: -0.073575325, z: 0.7719619}
+      size: 0.07660005
+      floorHeight: -0.40117148
+      smoothness: 0.6859994
+    - centre: {x: 0.9110634, y: 0.38873455, z: 0.13729155}
+      size: 0.012998136
+      floorHeight: -1.0398322
+      smoothness: 1.4633561
+    - centre: {x: 0.60426205, y: -0.7910426, z: 0.095493674}
+      size: 0.063643746
+      floorHeight: -0.22461088
+      smoothness: 0.8443542
+    - centre: {x: 0.4935052, y: -0.86372524, z: 0.10213435}
+      size: 0.01320813
+      floorHeight: -1.1564765
+      smoothness: 1.4607896
+    - centre: {x: 0.9112102, y: -0.08205145, z: -0.4036876}
+      size: 0.012805767
+      floorHeight: -1.0056714
+      smoothness: 1.4657073
+    - centre: {x: 0.23199327, y: -0.0050234715, z: 0.9727044}
+      size: 0.096561894
+      floorHeight: -0.2
+      smoothness: 0.44202134
+    - centre: {x: 0.48217148, y: 0.46484146, z: 0.7425854}
+      size: 0.03647652
+      floorHeight: -0.20136268
+      smoothness: 1.1763982
+    - centre: {x: 0.8044864, y: 0.5894873, z: -0.072844386}
+      size: 0.0448795
+      floorHeight: -0.4647158
+      smoothness: 1.0736951
+    - centre: {x: 0.05613669, y: 0.84556544, z: -0.53091216}
+      size: 0.032307718
+      floorHeight: -0.32874313
+      smoothness: 1.2273501
+    - centre: {x: 0.0046608886, y: 0.63632804, z: 0.7714045}
+      size: 0.020430403
+      floorHeight: -1.0427023
+      smoothness: 1.3725173
+    - centre: {x: 0.63123775, y: 0.57447517, z: -0.5210731}
+      size: 0.024746716
+      floorHeight: -0.97050035
+      smoothness: 1.3197623
+    - centre: {x: -0.92606413, y: -0.1470016, z: -0.3475567}
+      size: 0.056565423
+      floorHeight: -0.2
+      smoothness: 0.9308671
+    - centre: {x: 0.73202235, y: 0.08481503, z: 0.67598057}
+      size: 0.044423044
+      floorHeight: -0.76629233
+      smoothness: 1.0792739
+    - centre: {x: -0.14991657, y: 0.17217566, z: -0.97359157}
+      size: 0.014868464
+      floorHeight: -0.2309133
+      smoothness: 1.4404966
+    - centre: {x: 0.47330618, y: -0.82220715, z: 0.31615922}
+      size: 0.012189709
+      floorHeight: -1.026523
+      smoothness: 1.4732369
+    - centre: {x: -0.74645776, y: 0.5329067, z: -0.3985113}
+      size: 0.062432956
+      floorHeight: -0.20570333
+      smoothness: 0.8591528
+    - centre: {x: 0.73620397, y: -0.386855, z: -0.55529}
+      size: 0.028399114
+      floorHeight: -0.4169077
+      smoothness: 1.2751219
+    - centre: {x: -0.7422574, y: 0.5641297, z: -0.36167872}
+      size: 0.016337944
+      floorHeight: -1.0455323
+      smoothness: 1.4225363
+    - centre: {x: -0.8490618, y: 0.12238193, z: -0.5139229}
+      size: 0.04533687
+      floorHeight: -0.2
+      smoothness: 1.068105
+    - centre: {x: 0.6079591, y: -0.76891947, z: 0.19785988}
+      size: 0.010623583
+      floorHeight: -1.027066
+      smoothness: 1.4923785
+    - centre: {x: -0.3116641, y: -0.94643515, z: 0.08441532}
+      size: 0.010017025
+      floorHeight: -1.1833459
+      smoothness: 1.4997919
+    - centre: {x: -0.7806445, y: 0.53875744, z: 0.31675622}
+      size: 0.010808691
+      floorHeight: -1.1779583
+      smoothness: 1.490116
+    - centre: {x: -0.09347906, y: -0.83847386, z: 0.5368643}
+      size: 0.09551572
+      floorHeight: -0.2
+      smoothness: 0.45480785
+    - centre: {x: -0.15223972, y: 0.45547792, z: -0.87713337}
+      size: 0.020118874
+      floorHeight: -0.8805323
+      smoothness: 1.3763249
+    - centre: {x: 0.020192133, y: 0.91861594, z: -0.39463532}
+      size: 0.026315512
+      floorHeight: -0.9160104
+      smoothness: 1.3005881
+    - centre: {x: -0.21491186, y: -0.23633315, z: -0.9476073}
+      size: 0.014689892
+      floorHeight: -0.9017804
+      smoothness: 1.4426792
+    - centre: {x: -0.83764917, y: 0.24443698, z: 0.48846123}
+      size: 0.014145619
+      floorHeight: -0.23252328
+      smoothness: 1.4493313
+    - centre: {x: 0.67742705, y: -0.14866476, z: 0.7204106}
+      size: 0.016703138
+      floorHeight: -0.5428051
+      smoothness: 1.4180728
+    - centre: {x: 0.6670443, y: 0.32162854, z: 0.6720171}
+      size: 0.012009924
+      floorHeight: -0.92558545
+      smoothness: 1.4754343
+    - centre: {x: -0.049218327, y: -0.44649315, z: 0.8934324}
+      size: 0.01473634
+      floorHeight: -0.54900455
+      smoothness: 1.4421114
+    - centre: {x: 0.2039653, y: -0.66909873, z: 0.7146363}
+      size: 0.011998568
+      floorHeight: -1.0229079
+      smoothness: 1.4755731
+    - centre: {x: 0.60388696, y: 0.1422264, z: -0.78427815}
+      size: 0.030143464
+      floorHeight: -0.2
+      smoothness: 1.2538021
+    - centre: {x: -0.41363773, y: 0.26788074, z: -0.8701401}
+      size: 0.0148296645
+      floorHeight: -1.004174
+      smoothness: 1.4409708
+    - centre: {x: 0.54580265, y: -0.20348495, z: -0.81283045}
+      size: 0.031565093
+      floorHeight: -0.9464267
+      smoothness: 1.2364267
+    - centre: {x: 0.5659828, y: -0.7495699, z: -0.34323227}
+      size: 0.014289142
+      floorHeight: -0.73374355
+      smoothness: 1.4475771
+    - centre: {x: -0.936692, y: -0.12998848, z: -0.3251325}
+      size: 0.025153013
+      floorHeight: -0.24671395
+      smoothness: 1.3147966
+    - centre: {x: -0.8590217, y: 0.112834945, z: 0.49934956}
+      size: 0.027160633
+      floorHeight: -0.9041377
+      smoothness: 1.2902589
+    - centre: {x: -0.4851139, y: 0.72358984, z: 0.49100134}
+      size: 0.01087109
+      floorHeight: -0.78542084
+      smoothness: 1.4893533
+    - centre: {x: -0.4132475, y: 0.43009874, z: -0.80264664}
+      size: 0.010516205
+      floorHeight: -0.45150337
+      smoothness: 1.4936908
+    - centre: {x: -0.39436266, y: 0.59526277, z: 0.7001002}
+      size: 0.032883257
+      floorHeight: -0.6469119
+      smoothness: 1.2203158
+    - centre: {x: 0.7536032, y: 0.54216164, z: 0.37167594}
+      size: 0.017180165
+      floorHeight: -0.2
+      smoothness: 1.4122424
+    - centre: {x: 0.74663264, y: -0.6614571, z: -0.070810914}
+      size: 0.0121262055
+      floorHeight: -0.2090493
+      smoothness: 1.474013
+    - centre: {x: -0.5135605, y: -0.84162533, z: 0.16710031}
+      size: 0.056032855
+      floorHeight: -0.46348742
+      smoothness: 0.9373762
+    - centre: {x: 0.36438715, y: 0.37270594, z: 0.85341215}
+      size: 0.0128741255
+      floorHeight: -0.6015183
+      smoothness: 1.4648718
+    - centre: {x: 0.7151186, y: -0.31587955, z: 0.62355876}
+      size: 0.012926737
+      floorHeight: -0.7401288
+      smoothness: 1.4642287
+    - centre: {x: -0.7248454, y: -0.6756481, z: -0.13453114}
+      size: 0.08796255
+      floorHeight: -0.2
+      smoothness: 0.5471244
+    - centre: {x: -0.33529428, y: -0.86005205, z: 0.38456246}
+      size: 0.01615908
+      floorHeight: -1.0200909
+      smoothness: 1.4247223
+    - centre: {x: 0.5600936, y: 0.22080497, z: 0.7984612}
+      size: 0.011197726
+      floorHeight: -0.79323167
+      smoothness: 1.4853611
+    - centre: {x: -0.7314928, y: -0.6626807, z: 0.16053832}
+      size: 0.012478918
+      floorHeight: -1.1143419
+      smoothness: 1.4697021
+    - centre: {x: 0.043003693, y: 0.8384271, z: -0.54331446}
+      size: 0.020366775
+      floorHeight: -0.6742056
+      smoothness: 1.373295
+    - centre: {x: -0.7569766, y: -0.6139774, z: 0.22364771}
+      size: 0.017505068
+      floorHeight: -0.7998736
+      smoothness: 1.4082714
+    - centre: {x: 0.69877326, y: 0.7038466, z: 0.12773359}
+      size: 0.010343136
+      floorHeight: -1.1753299
+      smoothness: 1.4958061
+    - centre: {x: -0.67786306, y: 0.15013763, z: -0.7196946}
+      size: 0.017465191
+      floorHeight: -0.86566436
+      smoothness: 1.4087588
+    - centre: {x: -0.6121328, y: 0.5198192, z: -0.5958872}
+      size: 0.0266052
+      floorHeight: -0.9697606
+      smoothness: 1.2970475
+    - centre: {x: -0.062100288, y: -0.9804826, z: 0.18654072}
+      size: 0.03988326
+      floorHeight: -0.22811307
+      smoothness: 1.1347601
+    - centre: {x: -0.7474568, y: 0.041502323, z: 0.66301274}
+      size: 0.026272079
+      floorHeight: -0.87503254
+      smoothness: 1.3011191
+    - centre: {x: 0.23357637, y: -0.6601285, z: 0.71391344}
+      size: 0.02325218
+      floorHeight: -0.37960753
+      smoothness: 1.3380289
+    - centre: {x: -0.5062757, y: 0.35137317, z: 0.7875416}
+      size: 0.012847224
+      floorHeight: -1.0725505
+      smoothness: 1.4652005
+    - centre: {x: 0.5633815, y: -0.7650027, z: 0.31204483}
+      size: 0.010919645
+      floorHeight: -0.6184533
+      smoothness: 1.4887599
+    - centre: {x: 0.74303645, y: 0.6692508, z: -0.00021970272}
+      size: 0.010149406
+      floorHeight: -0.31207123
+      smoothness: 1.498174
+    - centre: {x: -0.5201192, y: -0.32207948, z: -0.7910378}
+      size: 0.010239893
+      floorHeight: -1.1951311
+      smoothness: 1.497068
+    - centre: {x: 0.76292765, y: -0.5974651, z: 0.24693501}
+      size: 0.026785286
+      floorHeight: -0.567575
+      smoothness: 1.2948465
+    - centre: {x: 0.98017883, y: -0.17221642, z: 0.09793365}
+      size: 0.023502788
+      floorHeight: -0.90924627
+      smoothness: 1.334966
+    - centre: {x: -0.5345485, y: 0.27339807, z: -0.79969454}
+      size: 0.0151685225
+      floorHeight: -0.9021944
+      smoothness: 1.4368292
+    - centre: {x: 0.80378306, y: -0.5948281, z: 0.010593295}
+      size: 0.010877647
+      floorHeight: -0.9673996
+      smoothness: 1.4892732
+    - centre: {x: 0.62387556, y: 0.751605, z: 0.21417081}
+      size: 0.014569347
+      floorHeight: -0.36193857
+      smoothness: 1.4441525
+    - centre: {x: 0.33082741, y: 0.3382619, z: -0.8809836}
+      size: 0.012609019
+      floorHeight: -1.1177868
+      smoothness: 1.468112
+    - centre: {x: 0.29711846, y: 0.10810957, z: 0.94870067}
+      size: 0.010149048
+      floorHeight: -0.33889082
+      smoothness: 1.4981782
+    - centre: {x: -0.8120268, y: -0.11011472, z: -0.573138}
+      size: 0.06001234
+      floorHeight: -0.5765509
+      smoothness: 0.88873804
+    - centre: {x: 0.772904, y: -0.21036465, z: 0.59863687}
+      size: 0.015630908
+      floorHeight: -0.92871296
+      smoothness: 1.4311779
+    - centre: {x: 0.69935155, y: 0.7145686, z: -0.017294765}
+      size: 0.025182983
+      floorHeight: -0.9653816
+      smoothness: 1.3144302
+    - centre: {x: 0.010286358, y: 0.96228594, z: -0.27184546}
+      size: 0.05623879
+      floorHeight: -0.46084943
+      smoothness: 0.9348593
+    - centre: {x: -0.600663, y: 0.23178619, z: -0.76516604}
+      size: 0.064128816
+      floorHeight: -0.20045967
+      smoothness: 0.83842564
+    - centre: {x: 0.32396466, y: -0.5276602, z: -0.7852526}
+      size: 0.024672678
+      floorHeight: -0.67519903
+      smoothness: 1.3206673
+    - centre: {x: -0.64279765, y: -0.25821212, z: 0.7212057}
+      size: 0.07914579
+      floorHeight: -0.2
+      smoothness: 0.6548848
+    - centre: {x: 0.06398932, y: -0.9888097, z: -0.13476169}
+      size: 0.017660497
+      floorHeight: -0.883554
+      smoothness: 1.4063717
+    - centre: {x: 0.5813924, y: -0.76578563, z: 0.27487323}
+      size: 0.011074937
+      floorHeight: -0.7851486
+      smoothness: 1.4868618
+    - centre: {x: 0.73071337, y: 0.12608334, z: 0.6709404}
+      size: 0.021043036
+      floorHeight: -0.800613
+      smoothness: 1.3650296
+    - centre: {x: 0.43989217, y: 0.22153297, z: 0.8702977}
+      size: 0.035456937
+      floorHeight: -0.7642644
+      smoothness: 1.1888597
+    - centre: {x: 0.7182675, y: -0.64906967, z: -0.25059998}
+      size: 0.013998966
+      floorHeight: -1.0724568
+      smoothness: 1.4511237
+    - centre: {x: -0.30577976, y: 0.89618444, z: -0.32148445}
+      size: 0.01046129
+      floorHeight: -1.0872737
+      smoothness: 1.494362
+    - centre: {x: 0.92823935, y: 0.3002837, z: 0.2195481}
+      size: 0.010089717
+      floorHeight: -1.0085955
+      smoothness: 1.4989035
+    - centre: {x: 0.27992228, y: 0.8702703, z: -0.40530622}
+      size: 0.015211498
+      floorHeight: -0.5323703
+      smoothness: 1.4363039
+    - centre: {x: 0.302419, y: 0.031746782, z: -0.95264626}
+      size: 0.010425441
+      floorHeight: -0.9049792
+      smoothness: 1.4948002
+    - centre: {x: 0.97230184, y: -0.16987862, z: 0.16053188}
+      size: 0.036063492
+      floorHeight: -0.7577627
+      smoothness: 1.1814462
+    - centre: {x: -0.95097876, y: 0.19168356, z: 0.24268663}
+      size: 0.0129085155
+      floorHeight: -0.32439908
+      smoothness: 1.4644514
+    - centre: {x: -0.19262637, y: 0.70855945, z: 0.6788509}
+      size: 0.0135255065
+      floorHeight: -0.8342116
+      smoothness: 1.4569105
+    - centre: {x: -0.22652178, y: -0.966857, z: 0.11779344}
+      size: 0.012196535
+      floorHeight: -0.4940224
+      smoothness: 1.4731535
+    - centre: {x: -0.92254764, y: -0.38560516, z: -0.014644742}
+      size: 0.010587864
+      floorHeight: -1.0739487
+      smoothness: 1.492815
+    - centre: {x: -0.7122555, y: 0.6244696, z: -0.32051504}
+      size: 0.027424034
+      floorHeight: -0.9955679
+      smoothness: 1.2870396
+    - centre: {x: 0.339695, y: -0.5265025, z: -0.7793603}
+      size: 0.020067537
+      floorHeight: -0.49295315
+      smoothness: 1.3769523
+    - centre: {x: -0.21707082, y: -0.12577717, z: 0.9680188}
+      size: 0.016709676
+      floorHeight: -1.045926
+      smoothness: 1.4179928
+    - centre: {x: -0.058592945, y: 0.0109743485, z: 0.99822164}
+      size: 0.05183428
+      floorHeight: -0.2
+      smoothness: 0.98869216
+    - centre: {x: -0.7597938, y: 0.6488525, z: 0.041276097}
+      size: 0.030083405
+      floorHeight: -0.6276896
+      smoothness: 1.2545362
+    - centre: {x: 0.021070054, y: -0.6932002, z: -0.72043705}
+      size: 0.016708933
+      floorHeight: -0.8751982
+      smoothness: 1.4180019
+    - centre: {x: -0.91175145, y: -0.3835883, z: 0.14686501}
+      size: 0.010917197
+      floorHeight: -0.85430557
+      smoothness: 1.4887898
+    - centre: {x: 0.9634052, y: -0.13831328, z: 0.22960818}
+      size: 0.032328542
+      floorHeight: -0.8506118
+      smoothness: 1.2270956
+    - centre: {x: -0.076502584, y: -0.8920433, z: -0.445428}
+      size: 0.014078966
+      floorHeight: -0.92968404
+      smoothness: 1.450146
+    - centre: {x: 0.101117894, y: 0.973818, z: 0.20360172}
+      size: 0.01132538
+      floorHeight: -0.91177773
+      smoothness: 1.4838009
+    - centre: {x: -0.14768367, y: 0.56394374, z: 0.8125005}
+      size: 0.010167797
+      floorHeight: -1.1493926
+      smoothness: 1.4979491
+    - centre: {x: 0.8590197, y: 0.009382693, z: -0.51185656}
+      size: 0.019666594
+      floorHeight: -1.0285841
+      smoothness: 1.3818527
+    - centre: {x: 0.19183518, y: -0.84735984, z: -0.49515712}
+      size: 0.030361965
+      floorHeight: -0.60281754
+      smoothness: 1.2511315
+    - centre: {x: 0.86256135, y: 0.40184447, z: 0.30742308}
+      size: 0.020074826
+      floorHeight: -0.7491568
+      smoothness: 1.3768632
+    - centre: {x: 0.7731426, y: 0.18365768, z: -0.60705876}
+      size: 0.011041783
+      floorHeight: -0.896214
+      smoothness: 1.4872671
+    - centre: {x: 0.26337326, y: -0.20192403, z: 0.94332457}
+      size: 0.014969458
+      floorHeight: -0.60222673
+      smoothness: 1.4392622
+    - centre: {x: 0.10364271, y: 0.52990294, z: -0.84170127}
+      size: 0.015515016
+      floorHeight: -0.8444285
+      smoothness: 1.4325942
+    - centre: {x: 0.23801482, y: -0.16467516, z: -0.9571996}
+      size: 0.019362144
+      floorHeight: -0.94690007
+      smoothness: 1.3855739
+    - centre: {x: -0.65016484, y: -0.48538402, z: -0.58454084}
+      size: 0.019448241
+      floorHeight: -0.9924094
+      smoothness: 1.3845215
+    - centre: {x: 0.0850307, y: -0.36349145, z: -0.92770886}
+      size: 0.027851924
+      floorHeight: -0.40589437
+      smoothness: 1.2818098
+    - centre: {x: 0.7519126, y: -0.43073383, z: -0.49909508}
+      size: 0.016402138
+      floorHeight: -0.87256557
+      smoothness: 1.4217516
+    - centre: {x: -0.20668158, y: 0.37308186, z: -0.90448475}
+      size: 0.010272252
+      floorHeight: -0.9803354
+      smoothness: 1.4966724
+    - centre: {x: 0.42536288, y: 0.36761016, z: -0.82700014}
+      size: 0.010302192
+      floorHeight: -1.0444281
+      smoothness: 1.4963065
+    - centre: {x: 0.6604024, y: -0.74152476, z: 0.11836207}
+      size: 0.012084278
+      floorHeight: -0.7319131
+      smoothness: 1.4745255
+    - centre: {x: -0.3442712, y: 0.19874606, z: 0.91759324}
+      size: 0.011096101
+      floorHeight: -1.1543767
+      smoothness: 1.4866033
+    - centre: {x: -0.34127462, y: 0.6245763, z: 0.70245004}
+      size: 0.011883732
+      floorHeight: -0.6289637
+      smoothness: 1.4769766
+    - centre: {x: 0.020589989, y: 0.62195975, z: -0.7827785}
+      size: 0.02429169
+      floorHeight: -0.7431757
+      smoothness: 1.3253238
+    - centre: {x: 0.6266278, y: -0.40514174, z: -0.66573095}
+      size: 0.012453079
+      floorHeight: -0.81270176
+      smoothness: 1.4700179
+    - centre: {x: -0.48911867, y: -0.788977, z: -0.37185776}
+      size: 0.015069077
+      floorHeight: -0.92675143
+      smoothness: 1.4380447
+    - centre: {x: -0.13799936, y: 0.582807, z: -0.80080724}
+      size: 0.010180272
+      floorHeight: -0.49949113
+      smoothness: 1.4977967
+    - centre: {x: -0.6453676, y: -0.7557746, z: -0.11092913}
+      size: 0.019170947
+      floorHeight: -0.96076185
+      smoothness: 1.3879106
+    - centre: {x: 0.84348243, y: 0.5311239, z: -0.08027995}
+      size: 0.03239458
+      floorHeight: -0.85488397
+      smoothness: 1.2262884
+    - centre: {x: 0.9930139, y: -0.09235883, z: -0.073439}
+      size: 0.011609461
+      floorHeight: -0.70402426
+      smoothness: 1.4803288
+    - centre: {x: -0.8915582, y: -0.14406101, z: -0.42938387}
+      size: 0.010315223
+      floorHeight: -0.8874677
+      smoothness: 1.4961473
+    - centre: {x: 0.5326567, y: -0.73375577, z: 0.42175743}
+      size: 0.010013843
+      floorHeight: -0.96823585
+      smoothness: 1.4998307
+    - centre: {x: 0.5177689, y: -0.50950724, z: -0.6872537}
+      size: 0.021638233
+      floorHeight: -1.0244436
+      smoothness: 1.357755
+    - centre: {x: 0.62146175, y: -0.2319685, z: 0.74831533}
+      size: 0.024173897
+      floorHeight: -0.88831896
+      smoothness: 1.3267635
+    - centre: {x: 0.58041936, y: -0.6512171, z: 0.4889066}
+      size: 0.010240626
+      floorHeight: -0.92500705
+      smoothness: 1.497059
+    - centre: {x: 0.69962966, y: 0.36363125, z: 0.6150534}
+      size: 0.010729599
+      floorHeight: -1.1323735
+      smoothness: 1.4910827
+    - centre: {x: -0.29751536, y: -0.27626377, z: 0.9138725}
+      size: 0.011016089
+      floorHeight: -0.9746385
+      smoothness: 1.4875811
+    - centre: {x: 0.77698624, y: -0.61257297, z: -0.1450752}
+      size: 0.014576093
+      floorHeight: -0.36679485
+      smoothness: 1.44407
+    - centre: {x: 0.888385, y: 0.10947727, z: 0.4458551}
+      size: 0.015814662
+      floorHeight: -1.1224761
+      smoothness: 1.4289318
+    - centre: {x: -0.9352881, y: 0.23579273, z: 0.26389}
+      size: 0.013455481
+      floorHeight: -0.78002363
+      smoothness: 1.4577664
+    - centre: {x: -0.8698977, y: -0.4531177, z: 0.19483912}
+      size: 0.010552087
+      floorHeight: -0.44318065
+      smoothness: 1.4932523
+    - centre: {x: 0.9256306, y: 0.30805874, z: -0.21979034}
+      size: 0.012805674
+      floorHeight: -0.24553384
+      smoothness: 1.4657084
+    - centre: {x: -0.603483, y: -0.60866094, z: -0.5151117}
+      size: 0.04991619
+      floorHeight: -0.69974405
+      smoothness: 1.0121355
+    - centre: {x: -0.8753888, y: 0.2637705, z: -0.40511668}
+      size: 0.012035052
+      floorHeight: -0.45062938
+      smoothness: 1.4751271
+    - centre: {x: -0.4439191, y: 0.15099469, z: 0.88325334}
+      size: 0.012010352
+      floorHeight: -1.1104426
+      smoothness: 1.475429
+    - centre: {x: -0.2437656, y: -0.89721584, z: -0.36821473}
+      size: 0.023790346
+      floorHeight: -0.4687383
+      smoothness: 1.3314513
+    - centre: {x: 0.03712334, y: 0.7261508, z: -0.6865325}
+      size: 0.012446207
+      floorHeight: -1.0376254
+      smoothness: 1.470102
+    - centre: {x: -0.9656631, y: -0.23162013, z: 0.11767328}
+      size: 0.012982872
+      floorHeight: -0.76314646
+      smoothness: 1.4635427
+    - centre: {x: 0.45086393, y: -0.8572839, z: 0.24856794}
+      size: 0.02399316
+      floorHeight: -0.6378106
+      smoothness: 1.3289725
+    - centre: {x: 0.91232336, y: 0.39663938, z: 0.10170162}
+      size: 0.015297981
+      floorHeight: -1.1090763
+      smoothness: 1.435247
+    - centre: {x: -0.24321276, y: 0.6696229, z: 0.7017498}
+      size: 0.010612518
+      floorHeight: -1.0334572
+      smoothness: 1.4925137
+    - centre: {x: 0.60017014, y: 0.4334782, z: -0.6722295}
+      size: 0.017150635
+      floorHeight: -0.6280981
+      smoothness: 1.4126034
+    - centre: {x: -0.054942653, y: -0.92056024, z: -0.3867172}
+      size: 0.01735173
+      floorHeight: -1.0041958
+      smoothness: 1.4101455
+    - centre: {x: 0.040255155, y: -0.4072966, z: 0.91240835}
+      size: 0.013263282
+      floorHeight: -0.8405257
+      smoothness: 1.4601154
+    - centre: {x: 0.55807364, y: 0.1786173, z: 0.8103392}
+      size: 0.01589432
+      floorHeight: -0.7183952
+      smoothness: 1.4279583
+    - centre: {x: 0.22225001, y: 0.24671134, z: 0.9432595}
+      size: 0.038279615
+      floorHeight: -0.35169908
+      smoothness: 1.1543603
+    - centre: {x: -0.83670783, y: 0.54759383, z: -0.007810235}
+      size: 0.048206646
+      floorHeight: -0.48542097
+      smoothness: 1.0330299
+    - centre: {x: -0.99552834, y: 0.06392802, z: -0.06954396}
+      size: 0.02182787
+      floorHeight: -1.0137742
+      smoothness: 1.3554372
+    - centre: {x: 0.63251406, y: 0.6626855, z: -0.4009663}
+      size: 0.01267138
+      floorHeight: -1.1599501
+      smoothness: 1.4673498
+    - centre: {x: -0.9974025, y: 0.07061648, z: -0.014197946}
+      size: 0.018223219
+      floorHeight: -0.85162264
+      smoothness: 1.399494
+    - centre: {x: -0.12662038, y: -0.07392286, z: 0.98919296}
+      size: 0.047166478
+      floorHeight: -0.2
+      smoothness: 1.045743
+    - centre: {x: -0.8007064, y: 0.50385064, z: -0.32404292}
+      size: 0.011000019
+      floorHeight: -0.51256055
+      smoothness: 1.4877776
+    - centre: {x: -0.52294284, y: 0.84911746, z: -0.07436645}
+      size: 0.034789365
+      floorHeight: -0.79986244
+      smoothness: 1.1970189
+    - centre: {x: 0.75379163, y: -0.6539308, z: -0.064596295}
+      size: 0.046525866
+      floorHeight: -0.2
+      smoothness: 1.0535728
+    - centre: {x: -0.9424695, y: 0.082884386, z: 0.32385394}
+      size: 0.011162847
+      floorHeight: -0.69464034
+      smoothness: 1.4857875
+    - centre: {x: -0.43690714, y: -0.3822996, z: 0.81422305}
+      size: 0.0119125135
+      floorHeight: -0.6028195
+      smoothness: 1.4766248
+    - centre: {x: -0.17520502, y: 0.9127087, z: 0.36914226}
+      size: 0.019463543
+      floorHeight: -0.994084
+      smoothness: 1.3843344
+    - centre: {x: -0.35459602, y: -0.20430483, z: -0.912426}
+      size: 0.01837373
+      floorHeight: -0.6439088
+      smoothness: 1.3976544
+    - centre: {x: 0.5704535, y: 0.35418162, z: 0.74103856}
+      size: 0.014135114
+      floorHeight: -0.8592597
+      smoothness: 1.4494597
+    - centre: {x: 0.52559024, y: -0.09274256, z: 0.8456676}
+      size: 0.015378374
+      floorHeight: -0.76524395
+      smoothness: 1.4342643
+    - centre: {x: 0.72253627, y: -0.5909271, z: 0.35881254}
+      size: 0.034912843
+      floorHeight: -0.5409158
+      smoothness: 1.1955098
+    - centre: {x: -0.35546216, y: 0.71904933, z: -0.59717226}
+      size: 0.014847944
+      floorHeight: -0.85231
+      smoothness: 1.4407474
+    - centre: {x: 0.5392492, y: -0.2166111, z: 0.813812}
+      size: 0.0132673485
+      floorHeight: -0.3547717
+      smoothness: 1.4600657
+    - centre: {x: 0.2362488, y: -0.8495495, z: 0.47164842}
+      size: 0.046831917
+      floorHeight: -0.3265222
+      smoothness: 1.0498321
+    - centre: {x: -0.19295909, y: 0.9336136, z: -0.30188167}
+      size: 0.02191976
+      floorHeight: -1.0076598
+      smoothness: 1.3543141
+    - centre: {x: -0.18336989, y: -0.13280715, z: 0.9740317}
+      size: 0.014282489
+      floorHeight: -0.7432639
+      smoothness: 1.4476584
+    - centre: {x: 0.39308342, y: 0.8981364, z: -0.19706976}
+      size: 0.010858633
+      floorHeight: -0.3515683
+      smoothness: 1.4895055
+    - centre: {x: -0.9929038, y: -0.053410903, z: 0.10625112}
+      size: 0.011643548
+      floorHeight: -1.0724194
+      smoothness: 1.4799122
+    - centre: {x: -0.69863814, y: 0.7072216, z: 0.1083616}
+      size: 0.012119861
+      floorHeight: -0.77512723
+      smoothness: 1.4740906
+    - centre: {x: -0.08023223, y: -0.88834035, z: -0.45212185}
+      size: 0.05059888
+      floorHeight: -0.6537845
+      smoothness: 1.0037915
+    - centre: {x: -0.6045306, y: 0.23907974, z: -0.75985765}
+      size: 0.014136212
+      floorHeight: -0.89196783
+      smoothness: 1.4494463
+    - centre: {x: 0.97159487, y: 0.17622864, z: 0.15794551}
+      size: 0.015304631
+      floorHeight: -0.660293
+      smoothness: 1.4351656
+    - centre: {x: 0.8336523, y: -0.2944173, z: 0.46727106}
+      size: 0.01572144
+      floorHeight: -1.1173108
+      smoothness: 1.4300712
+    - centre: {x: -0.33940393, y: -0.9006925, z: -0.27121556}
+      size: 0.011474955
+      floorHeight: -0.7876876
+      smoothness: 1.4819727
+    - centre: {x: -0.6978716, y: -0.5209713, z: -0.49149168}
+      size: 0.08180466
+      floorHeight: -0.2
+      smoothness: 0.62238747
+    - centre: {x: -0.07670899, y: 0.20192075, z: -0.9763932}
+      size: 0.028700441
+      floorHeight: -0.51288867
+      smoothness: 1.2714391
+    - centre: {x: -0.99750143, y: -0.04871468, z: -0.051164985}
+      size: 0.019083032
+      floorHeight: -0.29650953
+      smoothness: 1.3889852
+    - centre: {x: -0.4300549, y: -0.90236324, z: 0.02816546}
+      size: 0.02271084
+      floorHeight: -0.95367044
+      smoothness: 1.3446453
+    - centre: {x: -0.27255437, y: -0.07778968, z: -0.9589906}
+      size: 0.014504202
+      floorHeight: -0.832376
+      smoothness: 1.4449487
+    - centre: {x: 0.010485444, y: 0.38311368, z: -0.9236417}
+      size: 0.017612806
+      floorHeight: -0.3560237
+      smoothness: 1.4069546
+    - centre: {x: -0.27073917, y: 0.9165716, z: -0.29427326}
+      size: 0.014466392
+      floorHeight: -1.080649
+      smoothness: 1.4454107
+    - centre: {x: -0.87000936, y: 0.27153334, z: 0.4115257}
+      size: 0.011293317
+      floorHeight: -0.2289535
+      smoothness: 1.4841927
+    - centre: {x: 0.49727213, y: -0.56704605, z: 0.65664244}
+      size: 0.013740432
+      floorHeight: -0.8666118
+      smoothness: 1.4542836
+    - centre: {x: 0.16177116, y: -0.48768958, z: 0.857898}
+      size: 0.023548823
+      floorHeight: -0.65163887
+      smoothness: 1.3344033
+    - centre: {x: -0.5314542, y: -0.44096333, z: -0.72326183}
+      size: 0.010427655
+      floorHeight: -1.067173
+      smoothness: 1.494773
+    - centre: {x: -0.84323317, y: -0.47336248, z: 0.25472686}
+      size: 0.01621508
+      floorHeight: -0.6675655
+      smoothness: 1.4240379
+    - centre: {x: -0.10690032, y: -0.9727045, z: -0.20595682}
+      size: 0.021040514
+      floorHeight: -0.99391323
+      smoothness: 1.3650603
+    - centre: {x: 0.21814351, y: -0.2549258, z: -0.94203305}
+      size: 0.012433154
+      floorHeight: -1.0343679
+      smoothness: 1.4702615
+    - centre: {x: 0.09953737, y: 0.9835382, z: -0.15081394}
+      size: 0.0117837405
+      floorHeight: -0.75001603
+      smoothness: 1.4781988
+    - centre: {x: 0.24034499, y: 0.33858848, z: 0.9097209}
+      size: 0.010681412
+      floorHeight: -1.0810015
+      smoothness: 1.4916716
+    - centre: {x: 0.77418643, y: -0.08107296, z: -0.62774396}
+      size: 0.027467726
+      floorHeight: -0.90789986
+      smoothness: 1.2865056
+    - centre: {x: -0.027024841, y: 0.9729929, z: 0.22924745}
+      size: 0.026340378
+      floorHeight: -0.5529292
+      smoothness: 1.3002843
+    - centre: {x: 0.7574468, y: 0.15315719, z: 0.63467884}
+      size: 0.014341063
+      floorHeight: -0.75490564
+      smoothness: 1.4469426
+    - centre: {x: -0.18249139, y: -0.6572288, z: 0.7312641}
+      size: 0.010646195
+      floorHeight: -1.1201979
+      smoothness: 1.492102
+    - centre: {x: -0.8263068, y: -0.469098, z: 0.31171152}
+      size: 0.012496683
+      floorHeight: -0.34184578
+      smoothness: 1.469485
+    - centre: {x: 0.03571081, y: -0.009972936, z: 0.9993124}
+      size: 0.04037336
+      floorHeight: -0.46592715
+      smoothness: 1.1287701
+    - centre: {x: 0.65622145, y: 0.27656555, z: 0.7020576}
+      size: 0.01100169
+      floorHeight: -1.185482
+      smoothness: 1.4877571
+    - centre: {x: 0.13585068, y: 0.98972845, z: 0.044521928}
+      size: 0.036249187
+      floorHeight: -0.8302905
+      smoothness: 1.1791766
+    - centre: {x: -0.11137542, y: 0.941978, z: 0.31665894}
+      size: 0.013753413
+      floorHeight: -0.9350317
+      smoothness: 1.4541249
+    - centre: {x: -0.6294097, y: 0.35217306, z: -0.6926887}
+      size: 0.014127594
+      floorHeight: -0.36760744
+      smoothness: 1.4495517
+    - centre: {x: 0.90121967, y: 0.10830921, z: -0.41960967}
+      size: 0.013908386
+      floorHeight: -0.8895854
+      smoothness: 1.4522308
+    - centre: {x: 0.06622525, y: -0.89703315, z: 0.4369733}
+      size: 0.019582953
+      floorHeight: -0.6714732
+      smoothness: 1.382875
+    - centre: {x: 0.8640004, y: 0.08333794, z: 0.49654624}
+      size: 0.015653752
+      floorHeight: -1.1188351
+      smoothness: 1.4308985
+    - centre: {x: 0.70534766, y: 0.14003274, z: -0.6948924}
+      size: 0.010711109
+      floorHeight: -1.021006
+      smoothness: 1.4913087
+    - centre: {x: 0.0585129, y: 0.94281596, z: 0.3281376}
+      size: 0.022183554
+      floorHeight: -0.9059404
+      smoothness: 1.35109
+    - centre: {x: -0.94200504, y: 0.32816422, z: -0.07024753}
+      size: 0.0103932265
+      floorHeight: -0.7380247
+      smoothness: 1.4951938
+    - centre: {x: -0.34389377, y: 0.7193258, z: -0.6035788}
+      size: 0.01634297
+      floorHeight: -1.0170498
+      smoothness: 1.4224749
+    - centre: {x: 0.116436794, y: 0.38364628, z: 0.9161103}
+      size: 0.011246973
+      floorHeight: -1.1265992
+      smoothness: 1.4847592
+    - centre: {x: -0.3468972, y: 0.122893155, z: -0.92981696}
+      size: 0.015356108
+      floorHeight: -0.92988545
+      smoothness: 1.4345365
+    - centre: {x: -0.44690958, y: 0.34613973, z: -0.82489944}
+      size: 0.019427981
+      floorHeight: -0.65587175
+      smoothness: 1.3847691
+    - centre: {x: -0.6342081, y: 0.5404633, z: -0.5528829}
+      size: 0.015760133
+      floorHeight: -0.87721074
+      smoothness: 1.4295983
+    - centre: {x: -0.037417684, y: 0.87553996, z: 0.48169467}
+      size: 0.01442627
+      floorHeight: -1.1052822
+      smoothness: 1.4459012
+    - centre: {x: 0.20902348, y: -0.9482467, z: -0.2390343}
+      size: 0.015188425
+      floorHeight: -0.5235186
+      smoothness: 1.4365859
+    - centre: {x: 0.47213113, y: -0.88065815, z: -0.039158702}
+      size: 0.01929848
+      floorHeight: -0.730287
+      smoothness: 1.3863518
+    - centre: {x: -0.914683, y: -0.08882854, z: -0.39428985}
+      size: 0.014040309
+      floorHeight: -1.1333059
+      smoothness: 1.4506185
+    - centre: {x: 0.6691284, y: -0.7331791, z: -0.12130749}
+      size: 0.07213052
+      floorHeight: -0.2
+      smoothness: 0.74062693
+    - centre: {x: -0.66074353, y: 0.56197274, z: 0.49759886}
+      size: 0.0131153045
+      floorHeight: -1.0985606
+      smoothness: 1.4619241
+    - centre: {x: -0.37920034, y: 0.047909733, z: 0.92407346}
+      size: 0.04859908
+      floorHeight: -0.6749406
+      smoothness: 1.0282335
+    - centre: {x: -0.44625652, y: 0.4628871, z: -0.765892}
+      size: 0.021178775
+      floorHeight: -1.0559431
+      smoothness: 1.3633705
+    - centre: {x: -0.10599559, y: -0.30658442, z: -0.9459233}
+      size: 0.0124460915
+      floorHeight: -1.0240145
+      smoothness: 1.4701034
+    - centre: {x: 0.2621064, y: 0.85536516, z: 0.44682285}
+      size: 0.018464351
+      floorHeight: -0.6522843
+      smoothness: 1.3965468
+    - centre: {x: 0.11204248, y: 0.9806348, z: 0.16062963}
+      size: 0.017207503
+      floorHeight: -0.34522304
+      smoothness: 1.4119083
+    - centre: {x: -0.5877575, y: -0.7759266, z: -0.22908294}
+      size: 0.043594908
+      floorHeight: -0.7679414
+      smoothness: 1.0893955
+    - centre: {x: -0.98379165, y: 0.04447797, z: -0.17371142}
+      size: 0.011431588
+      floorHeight: -0.51633453
+      smoothness: 1.4825028
+    - centre: {x: -0.055143677, y: -0.54393405, z: -0.8373141}
+      size: 0.03947304
+      floorHeight: -0.4483188
+      smoothness: 1.139774
+    - centre: {x: -0.7477193, y: -0.242713, z: -0.61806655}
+      size: 0.027695376
+      floorHeight: -0.21383996
+      smoothness: 1.2837232
+    - centre: {x: -0.7045294, y: 0.5069252, z: 0.496654}
+      size: 0.03961637
+      floorHeight: -0.44799373
+      smoothness: 1.1380222
+    - centre: {x: 0.82113415, y: -0.53628856, z: 0.19527733}
+      size: 0.015548596
+      floorHeight: -0.46197
+      smoothness: 1.4321839
+    - centre: {x: -0.4831407, y: -0.82942975, z: -0.2803949}
+      size: 0.0109731285
+      floorHeight: -0.9503909
+      smoothness: 1.4881063
+    - centre: {x: -0.7981817, y: 0.29843378, z: 0.5233004}
+      size: 0.01227032
+      floorHeight: -0.8042272
+      smoothness: 1.4722517
+    - centre: {x: 0.6142371, y: -0.5543208, z: 0.56164145}
+      size: 0.015708197
+      floorHeight: -0.90808463
+      smoothness: 1.4302331
+    - centre: {x: -0.027303346, y: 0.70217216, z: -0.7114835}
+      size: 0.010029872
+      floorHeight: -0.85789233
+      smoothness: 1.4996349
+    - centre: {x: -0.92938256, y: 0.12187171, z: -0.34841835}
+      size: 0.014340311
+      floorHeight: -1.0206811
+      smoothness: 1.4469517
+    - centre: {x: -0.71209925, y: -0.5373869, z: 0.45180747}
+      size: 0.014532982
+      floorHeight: -1.0131649
+      smoothness: 1.4445969
+    - centre: {x: 0.09117318, y: 0.9740751, z: -0.20703924}
+      size: 0.013941879
+      floorHeight: -0.37278375
+      smoothness: 1.4518214
+    - centre: {x: 0.2701001, y: -0.3533103, z: -0.8956661}
+      size: 0.01700801
+      floorHeight: -0.9438735
+      smoothness: 1.4143466
+    - centre: {x: -0.7421847, y: -0.043952078, z: 0.6687527}
+      size: 0.011518049
+      floorHeight: -1.0766684
+      smoothness: 1.481446
+    - centre: {x: -0.22268164, y: 0.036881573, z: -0.97419333}
+      size: 0.011050081
+      floorHeight: -0.67489845
+      smoothness: 1.4871657
+    - centre: {x: 0.78834534, y: -0.5995313, z: 0.1381079}
+      size: 0.08296671
+      floorHeight: -0.2
+      smoothness: 0.6081847
+    - centre: {x: -0.09455421, y: -0.97999513, z: -0.17512572}
+      size: 0.012202907
+      floorHeight: -1.0574118
+      smoothness: 1.4730755
+    - centre: {x: -0.40757886, y: -0.5696918, z: 0.71367407}
+      size: 0.021877807
+      floorHeight: -0.5772999
+      smoothness: 1.3548268
+  shapeNoise:
+    numLayers: 4
+    lacunarity: 2
+    persistence: 0.5
+    scale: 0.97
+    elevation: 0
+    verticalShift: 0
+    offset: {x: 0, y: 0, z: 0}
+  ridgeNoise:
+    numLayers: 4
+    lacunarity: 5
+    persistence: 0.5
+    scale: 1.82
+    power: 2
+    elevation: -2.84
+    gain: 0.5
+    verticalShift: 0
+    peakSmoothing: 3
+    offset: {x: 0, y: 0, z: 0}
+  ridgeNoise2:
+    numLayers: 5
+    lacunarity: 2
+    persistence: 0.5
+    scale: 2
+    power: 0.5
+    elevation: 3
+    gain: 1
+    verticalShift: 0
+    peakSmoothing: 0
+    offset: {x: 0, y: 0, z: 0}
+  testParams: {x: 0, y: 0, z: 1, w: 23.11}
