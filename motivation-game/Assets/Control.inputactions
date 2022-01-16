@@ -1,0 +1,34 @@
+{
+    "name": "Control",
+    "maps": [
+        {
+            "name": "DeviceSimulator",
+            "id": "749d831d-651a-4000-95c8-b96b26a8cef8",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "b05a8307-79a7-4ef0-87b7-fe9e75288e84",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "73402871-70fe-4bee-b091-a9fdfcbf0731",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
