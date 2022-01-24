@@ -32,6 +32,7 @@ public class PhysicalButton : MonoBehaviour
         {
             Released();
         }
+
     }
 
     float GetValue()
@@ -44,7 +45,7 @@ public class PhysicalButton : MonoBehaviour
     {
         _isPressed = true;
         onPressed.Invoke();
-   //     Debug.Log("Pressed");
+        Debug.Log("Pressed");
 
     }
 
@@ -52,6 +53,6 @@ public class PhysicalButton : MonoBehaviour
     {
         _isPressed = false;
         onReleased.Invoke();
-  //      Debug.Log("Released");
+        Debug.Log("Released");
     }
 }

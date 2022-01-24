@@ -19,6 +19,8 @@ public class SimonSays : MonoBehaviour
     private GameObject finalScreen;
     private int rounds = 1;
 
+    //Set level of difficulty
+
     private int round
     {
         get { return rounds; }
@@ -65,7 +67,7 @@ public class SimonSays : MonoBehaviour
     {
         for (int i = 0; i < _buttonScripts.Count; i++)
         {
-            _buttonScripts[i].enabled = false;
+            _buttonScripts[i].DisablePhysicalTouch();
         }
     }
 
@@ -73,15 +75,16 @@ public class SimonSays : MonoBehaviour
     {
         for (int i = 0; i < _buttonScripts.Count; i++)
         {
-            _buttonScripts[i].enabled = true;
+            _buttonScripts[i].EnablePhysicalTouch();
         }
     }
 
-    void AddObject()
+    async void AddObject()
     {
         // get one random button from button list, and add into order list (Index only, start from 0)
         DisableButtons();
-        int rndBtn = UnityEngine.Random.Range(0,_buttonScripts.Count);
+        await Task.Delay(2000);
+        int rndBtn = UnityEngine.Random.Range(0,_buttonScripts.Count); //this line affects the way of generating order
         _buttonOrder.Add(rndBtn);
         ShowOrder();
     }

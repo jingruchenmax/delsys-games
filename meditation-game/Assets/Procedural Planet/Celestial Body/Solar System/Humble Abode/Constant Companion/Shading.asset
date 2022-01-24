@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc781a665a4a49f09ef89610d5413ee, type: 3}
   m_Name: Shading
   m_EditorClassIdentifier: 
-  randomize: 0
-  seed: 0
+  randomize: 1
+  seed: 7403
   terrainMaterial: {fileID: 2100000, guid: 97c6fd1a351c24e73aa0a7d0074c064a, type: 2}
   hasOcean: 0
   oceanLevel: 0.232
   oceanSettings: {fileID: 11400000, guid: 2dda04ece1bc5461c9c060d959433048, type: 2}
-  shadingDataCompute: {fileID: 7200000, guid: 8f6c3d86008df43ca88b9d64cf8e0514, type: 3}
+  shadingDataCompute: {fileID: 7200000, guid: f3a2904f78271471481822700022a157, type: 3}
   primaryColA: {r: 1, g: 1, b: 1, a: 0}
   secondaryColA: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0}
   primaryColB: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
