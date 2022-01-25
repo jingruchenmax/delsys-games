@@ -5,17 +5,33 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+public enum ButtonPatternMode
+{
+    PureRandom,
+    SetPattern,
+    WithDifficultyAdjustment
+}
+//deal with multiply button types
+
+
 public class SimonSays : MonoBehaviour
 {
     public static SimonSays instance { get; private set; }
-
+    public ButtonPatternMode patternMode;
+    [Header("Core")]
     public GameObject[] buttons;
     public Text currentRounds;
     public GameObject Failed;
     //public Transform mainUI;
+
+    [Header("Set Pattern")]
+    [Tooltip("List Starts at 1, not 0")]
+    public List<int> setButtonOrder; // Start From 1!!!!
+
     //This is the order of button clicks
     private List<int> _buttonOrder = new List<int>();
-    private List<ButtonScript> _buttonScripts= new List<ButtonScript>();  
+    private List<ButtonRenderer> _buttonRenderers = new List<ButtonRenderer>();
     private GameObject finalScreen;
     private int rounds = 1;
 
@@ -50,12 +66,12 @@ public class SimonSays : MonoBehaviour
     {
         FinalScreen();
 
-        // Add ButtonScript to the list
+        // Add ButtonRenderer to the list
         for (int i = 0; i < buttons.Length; i++)
         {
-            ButtonScript bs = buttons[i].GetComponentInChildren<ButtonScript>();
+            ButtonRenderer bs = buttons[i].GetComponentInChildren<ButtonRenderer>();
             bs.buttonId = i;
-            _buttonScripts.Add(bs);
+            _buttonRenderers.Add(bs);
 
         }
 
@@ -65,17 +81,17 @@ public class SimonSays : MonoBehaviour
     // Disable and enable buttons can be changed into one toggle function, but here separated for clearity?
     private void DisableButtons()
     {
-        for (int i = 0; i < _buttonScripts.Count; i++)
+        for (int i = 0; i < _buttonRenderers.Count; i++)
         {
-            _buttonScripts[i].DisablePhysicalTouch();
+            _buttonRenderers[i].DisablePhysicalTouch();
         }
     }
 
     private void EnableButtons()
     {
-        for (int i = 0; i < _buttonScripts.Count; i++)
+        for (int i = 0; i < _buttonRenderers.Count; i++)
         {
-            _buttonScripts[i].EnablePhysicalTouch();
+            _buttonRenderers[i].EnablePhysicalTouch();
         }
     }
 
@@ -84,7 +100,24 @@ public class SimonSays : MonoBehaviour
         // get one random button from button list, and add into order list (Index only, start from 0)
         DisableButtons();
         await Task.Delay(2000);
-        int rndBtn = UnityEngine.Random.Range(0,_buttonScripts.Count); //this line affects the way of generating order
+
+        int rndBtn = 0;
+        //Button Generating Mode Selection
+        if (patternMode == ButtonPatternMode.PureRandom)
+        {
+            rndBtn = UnityEngine.Random.Range(0, _buttonRenderers.Count);
+        }
+        if (patternMode == ButtonPatternMode.SetPattern)
+        {
+            rndBtn = setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1;
+            Debug.Log(rndBtn);
+        }
+        if (patternMode == ButtonPatternMode.WithDifficultyAdjustment)
+        {
+            rndBtn = setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1;
+            Debug.Log(rndBtn);
+        }
+
         _buttonOrder.Add(rndBtn);
         ShowOrder();
     }
@@ -98,7 +131,7 @@ public class SimonSays : MonoBehaviour
             {
                 counter++;
             }
-            else 
+            else
             {
                 counter = 0; round++; AddObject();
                 Debug.Log("Level Up! + Round: " + "round");
@@ -115,23 +148,31 @@ public class SimonSays : MonoBehaviour
         _buttonOrder.Clear();
         Debug.Log("Game Restart " + _buttonOrder.Count);
         DisableButtons();
-       // finalScreen.SetActive(true);
+        for (int i = 0; i < _buttonRenderers.Count; i++)
+        {
+            await Task.Delay(10);
+            _buttonRenderers[i].Highlight();
+            _buttonRenderers[i].Default();
+        }
+        // finalScreen.SetActive(true);
         await Task.Delay(2000);
         AddObject();
-     //   finalScreen.SetActive(false);
+        //   finalScreen.SetActive(false);
+
+
     }
 
     private async void ShowOrder()
     {
         for (int i = 0; i < _buttonOrder.Count; i++)
         {
-            
+
             await Task.Delay(500);
             // show button highlight state
-            _buttonScripts[_buttonOrder[i]].Highlight();
+            _buttonRenderers[_buttonOrder[i]].Highlight();
             await Task.Delay(1000);
             // show button default state
-            _buttonScripts[_buttonOrder[i]].Default();
+            _buttonRenderers[_buttonOrder[i]].Default();
         }
         EnableButtons();
     }
@@ -140,8 +181,8 @@ public class SimonSays : MonoBehaviour
     private void FinalScreen()
     {
         Vector3 pos = new Vector3(0, 0, 0);
-      //  finalScreen = Instantiate(Failed, pos, Quaternion.identity);
-     //   finalScreen.SetActive(false);
-      //  finalScreen.transform.SetParent(mainUI, false);
+        //  finalScreen = Instantiate(Failed, pos, Quaternion.identity);
+        //   finalScreen.SetActive(false);
+        //  finalScreen.transform.SetParent(mainUI, false);
     }
 }
