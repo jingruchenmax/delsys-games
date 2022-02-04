@@ -4,15 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public enum ButtonType
-{
-    Button,
-    Toggle,
-    Knob
-}
+
 public class ButtonRenderer : MonoBehaviour
 {
-    public ButtonType buttonType;
+    public InteractionType buttonType;
     public int buttonId; // it is set when start the game, and set in SimonSays
     SimonSays ms;
     Material material;
@@ -28,7 +23,7 @@ public class ButtonRenderer : MonoBehaviour
         ms = GameObject.Find("Scripts").GetComponent<SimonSays>();
         boxCollider = GetComponent<BoxCollider>();
         Default();
-        if (buttonType == ButtonType.Toggle)
+        if (buttonType == InteractionType.Toggle)
         {
             isToggle = false;
         }
@@ -59,18 +54,13 @@ public class ButtonRenderer : MonoBehaviour
     {
         onTrigger.Invoke();
 
-        if (buttonType == ButtonType.Button)
+        if (buttonType == InteractionType.Button)
         {
             material.color = Color.red;
         }
 
-        if (buttonType == ButtonType.Knob)
-        {
-            material.color = Color.red;
-            transform.Rotate(new Vector3(0, 0, 30));
-        }
 
-        if (buttonType == ButtonType.Toggle)
+        if (buttonType == InteractionType.Toggle)
         {
             material.color = Color.red;
             isToggle = !isToggle;
@@ -80,17 +70,13 @@ public class ButtonRenderer : MonoBehaviour
 
     public void UserUnpressed()
     {
-        if (buttonType == ButtonType.Button)
+        if (buttonType == InteractionType.Button)
         {
             Default();
         }
 
-        if (buttonType == ButtonType.Knob)
-        {
-            Default();
-        }
 
-        if (buttonType == ButtonType.Toggle)
+        if (buttonType == InteractionType.Toggle)
         {
             if (isToggle==false)
             {

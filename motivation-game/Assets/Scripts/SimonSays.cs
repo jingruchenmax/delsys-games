@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public enum ButtonPatternMode
+public enum InteractionPatternMode
 {
     PureRandom,
     SetPattern,
@@ -18,10 +18,13 @@ public enum ButtonPatternMode
 public class SimonSays : MonoBehaviour
 {
     public static SimonSays instance { get; private set; }
-    public ButtonPatternMode patternMode;
+    public InteractionPatternMode patternMode;
+   
     [Header("Core")]
     public GameObject[] buttons;
     public Text currentRounds;
+    public int currentStage;
+    public int numberPerStage = 5;
     public GameObject Failed;
     //public Transform mainUI;
 
@@ -103,16 +106,16 @@ public class SimonSays : MonoBehaviour
 
         int rndBtn = 0;
         //Button Generating Mode Selection
-        if (patternMode == ButtonPatternMode.PureRandom)
+        if (patternMode == InteractionPatternMode.PureRandom)
         {
             rndBtn = UnityEngine.Random.Range(0, _buttonRenderers.Count);
         }
-        if (patternMode == ButtonPatternMode.SetPattern)
+        if (patternMode == InteractionPatternMode.SetPattern)
         {
             rndBtn = setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1;
             Debug.Log(rndBtn);
         }
-        if (patternMode == ButtonPatternMode.WithDifficultyAdjustment)
+        if (patternMode == InteractionPatternMode.WithDifficultyAdjustment)
         {
             rndBtn = setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1;
             Debug.Log(rndBtn);

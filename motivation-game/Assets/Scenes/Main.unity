@@ -3376,7 +3376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137871595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.76, z: -0.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3516,6 +3516,8 @@ MonoBehaviour:
   - {fileID: 1530709598}
   - {fileID: 1739136243}
   currentRounds: {fileID: 1441001742}
+  currentStage: 0
+  numberPerStage: 0
   Failed: {fileID: 816058876}
   setButtonOrder: 030000000300000004000000050000000500000004000000030000000200000001000000010000000200000003000000030000000200000002000000
 --- !u!114 &1193460830
