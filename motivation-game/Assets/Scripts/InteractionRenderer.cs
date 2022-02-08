@@ -5,23 +5,23 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 
-public class ButtonRenderer : MonoBehaviour
+public class InteractionRenderer : MonoBehaviour
 {
-    public InteractionType buttonType;
-    public int buttonId; // it is set when start the game, and set in SimonSays
-    SimonSays ms;
+    // this handles two buttons
+    private InteractionBehavior interactionBehavior;
+    private InteractionType buttonType;
     Material material;
-    Material previousMaterial;
-    BoxCollider boxCollider;
     private bool isToggle=false;
+    //onTrigger event is for audio render
     public UnityEvent onTrigger;
     //is the second child
 
     void Awake()
     {
+        interactionBehavior = GetComponent<InteractionBehavior>();
+        buttonType = interactionBehavior.interactionProperty.buttonType;
         material = GetComponentInChildren<Renderer>().material;
-        ms = GameObject.Find("Scripts").GetComponent<SimonSays>();
-        boxCollider = GetComponent<BoxCollider>();
+
         Default();
         if (buttonType == InteractionType.Toggle)
         {
@@ -90,19 +90,6 @@ public class ButtonRenderer : MonoBehaviour
     {
         material.color = new Color(0, 1, 0, 0.1f);
     }
-    public void btn()
-    {
-        ms.CheckObject(buttonId);
-    }
 
-    public void DisablePhysicalTouch()
-    {
-        boxCollider.enabled = false;
-    }
-
-    public void EnablePhysicalTouch()
-    {
-        boxCollider.enabled = true;
-    }
 
 }

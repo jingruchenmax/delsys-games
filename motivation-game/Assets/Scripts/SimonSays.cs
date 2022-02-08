@@ -23,8 +23,9 @@ public class SimonSays : MonoBehaviour
     [Header("Core")]
     public GameObject[] buttons;
     public Text currentRounds;
-    public int currentStage;
-    public int numberPerStage = 5;
+    public int currentStage; //Stage will be the "real" levl
+    public int totalStages = 10;
+    public int numberPerStage = 10;
     public GameObject Failed;
     //public Transform mainUI;
 
@@ -34,9 +35,12 @@ public class SimonSays : MonoBehaviour
 
     //This is the order of button clicks
     private List<int> _buttonOrder = new List<int>();
-    private List<ButtonRenderer> _buttonRenderers = new List<ButtonRenderer>();
+   // private List<InteractionRenderer> _buttonRenderers = new List<InteractionRenderer>();
+    private List<InteractionBehavior> _interactionBehavior = new List<InteractionBehavior>();
+    // All interaction should be accessed from behavior not renderer.
     private GameObject finalScreen;
     private int rounds = 1;
+    private int stages = 1;
 
     //Set level of difficulty
 
@@ -47,6 +51,16 @@ public class SimonSays : MonoBehaviour
         {
             rounds = value;
             currentRounds.text = "Round: " + rounds;
+        }
+    }
+
+    private int stage
+    {
+        get { return stages; }
+        set
+        {
+            stages = value;
+            currentRounds.text += "Stage: " + rounds;
         }
     }
     // count replay index
@@ -68,33 +82,42 @@ public class SimonSays : MonoBehaviour
     void Start()
     {
         FinalScreen();
-
+        _interactionBehavior = new List<InteractionBehavior>();
         // Add ButtonRenderer to the list
         for (int i = 0; i < buttons.Length; i++)
         {
-            ButtonRenderer bs = buttons[i].GetComponentInChildren<ButtonRenderer>();
-            bs.buttonId = i;
-            _buttonRenderers.Add(bs);
-
+            InteractionBehavior ib = buttons[i].GetComponentInChildren<InteractionBehavior>();
+            ib.buttonId = i;
+            Debug.Log("Button: " + i + " Difficulty: " + ib.interactionProperty.difficultyLevel);
+            _interactionBehavior.Add(ib);
         }
+        
+        _interactionBehavior.Sort();
 
+        //for testing the sort method
+        //for (int i = 0; i < buttons.Length; i++)
+        //{
+        //    Debug.Log("Button: " + _interactionBehavior[i].GetComponentInChildren<InteractionBehavior>().buttonId);
+        //}
         AddObject();
+
+        
     }
 
     // Disable and enable buttons can be changed into one toggle function, but here separated for clearity?
     private void DisableButtons()
     {
-        for (int i = 0; i < _buttonRenderers.Count; i++)
+        for (int i = 0; i < _interactionBehavior.Count; i++)
         {
-            _buttonRenderers[i].DisablePhysicalTouch();
+            _interactionBehavior[i].DisablePhysicalTouch();
         }
     }
 
     private void EnableButtons()
     {
-        for (int i = 0; i < _buttonRenderers.Count; i++)
+        for (int i = 0; i < _interactionBehavior.Count; i++)
         {
-            _buttonRenderers[i].EnablePhysicalTouch();
+            _interactionBehavior[i].EnablePhysicalTouch();
         }
     }
 
@@ -108,7 +131,7 @@ public class SimonSays : MonoBehaviour
         //Button Generating Mode Selection
         if (patternMode == InteractionPatternMode.PureRandom)
         {
-            rndBtn = UnityEngine.Random.Range(0, _buttonRenderers.Count);
+            rndBtn = UnityEngine.Random.Range(0, _interactionBehavior.Count);
         }
         if (patternMode == InteractionPatternMode.SetPattern)
         {
@@ -117,12 +140,23 @@ public class SimonSays : MonoBehaviour
         }
         if (patternMode == InteractionPatternMode.WithDifficultyAdjustment)
         {
-            rndBtn = setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1;
+            // here is the part of threshold on difficulty
+
+            rndBtn = DifficultScalingGenerator();
+
             Debug.Log(rndBtn);
         }
 
         _buttonOrder.Add(rndBtn);
         ShowOrder();
+    }
+
+    private int DifficultScalingGenerator()
+    {
+        int index = 0;
+
+
+        return index;
     }
 
     public void CheckObject(int id)
@@ -151,18 +185,17 @@ public class SimonSays : MonoBehaviour
         _buttonOrder.Clear();
         Debug.Log("Game Restart " + _buttonOrder.Count);
         DisableButtons();
-        for (int i = 0; i < _buttonRenderers.Count; i++)
+        for (int i = 0; i < _interactionBehavior.Count; i++)
         {
             await Task.Delay(10);
-            _buttonRenderers[i].Highlight();
-            _buttonRenderers[i].Default();
+            _interactionBehavior[i].interactionRenderer.Highlight();
+            await Task.Delay(100);
+            _interactionBehavior[i].interactionRenderer.Default();
         }
         // finalScreen.SetActive(true);
         await Task.Delay(2000);
         AddObject();
         //   finalScreen.SetActive(false);
-
-
     }
 
     private async void ShowOrder()
@@ -172,10 +205,10 @@ public class SimonSays : MonoBehaviour
 
             await Task.Delay(500);
             // show button highlight state
-            _buttonRenderers[_buttonOrder[i]].Highlight();
+            _interactionBehavior[_buttonOrder[i]].interactionRenderer.Highlight();
             await Task.Delay(1000);
             // show button default state
-            _buttonRenderers[_buttonOrder[i]].Default();
+            _interactionBehavior[_buttonOrder[i]].interactionRenderer.Default();
         }
         EnableButtons();
     }
@@ -185,7 +218,8 @@ public class SimonSays : MonoBehaviour
     {
         Vector3 pos = new Vector3(0, 0, 0);
         //  finalScreen = Instantiate(Failed, pos, Quaternion.identity);
-        //   finalScreen.SetActive(false);
+        //  finalScreen.SetActive(false);
         //  finalScreen.transform.SetParent(mainUI, false);
+
     }
 }

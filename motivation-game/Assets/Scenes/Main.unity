@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 189449282}
   - component: {fileID: 189449281}
   - component: {fileID: 189449286}
+  - component: {fileID: 189449287}
   m_Layer: 0
   m_Name: Push - 5
   m_TagString: Untagged
@@ -383,8 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 0
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -414,48 +413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 189449281}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 189449281}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: btn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 189449281}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &189449283
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -677,6 +634,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &189449287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189449279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 2
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &207869703
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +672,7 @@ GameObject:
   - component: {fileID: 207869706}
   - component: {fileID: 207869705}
   - component: {fileID: 207869710}
+  - component: {fileID: 207869711}
   m_Layer: 0
   m_Name: Push - 6
   m_TagString: Untagged
@@ -726,8 +707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 0
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -757,48 +736,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 207869705}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 207869705}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: btn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 207869705}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &207869707
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1020,6 +957,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &207869711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207869703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 1
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &229916540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1236,6 +1196,7 @@ GameObject:
   - component: {fileID: 278897643}
   - component: {fileID: 278897642}
   - component: {fileID: 278897647}
+  - component: {fileID: 278897648}
   m_Layer: 0
   m_Name: Push - 4
   m_TagString: Untagged
@@ -1270,8 +1231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 1
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -1301,48 +1260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 278897642}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 278897642}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: btn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 278897642}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &278897644
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1564,6 +1481,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &278897648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278897640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 0
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &343761513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2362,7 @@ GameObject:
   - component: {fileID: 1058870727}
   - component: {fileID: 1058870726}
   - component: {fileID: 1058870731}
+  - component: {fileID: 1058870732}
   m_Layer: 0
   m_Name: Push - 2
   m_TagString: Untagged
@@ -2456,8 +2397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 1
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -2487,48 +2426,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1058870726}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1058870726}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: btn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1058870726}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &1058870728
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2750,6 +2647,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1058870732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058870724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 0
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1085423398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,6 +2783,7 @@ GameObject:
   - component: {fileID: 1096715367}
   - component: {fileID: 1096715366}
   - component: {fileID: 1096715371}
+  - component: {fileID: 1096715372}
   m_Layer: 0
   m_Name: Push - 1
   m_TagString: Untagged
@@ -2897,8 +2818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 1
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -2928,48 +2847,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1096715366}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1096715366}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: btn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1096715366}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &1096715368
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -3191,6 +3068,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1096715372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096715364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 0
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1107631873
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,6 +3417,7 @@ MonoBehaviour:
   - {fileID: 1739136243}
   currentRounds: {fileID: 1441001742}
   currentStage: 0
+  totalStages: 10
   numberPerStage: 0
   Failed: {fileID: 816058876}
   setButtonOrder: 030000000300000004000000050000000500000004000000030000000200000001000000010000000200000003000000030000000200000002000000
@@ -4009,6 +3910,7 @@ GameObject:
   - component: {fileID: 1530709601}
   - component: {fileID: 1530709600}
   - component: {fileID: 1530709605}
+  - component: {fileID: 1530709606}
   m_Layer: 0
   m_Name: Push - 7
   m_TagString: Untagged
@@ -4043,8 +3945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 0
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -4074,48 +3974,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1530709600}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1530709600}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1530709600}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: Default
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &1530709602
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -4337,6 +4195,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1530709606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530709598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 3
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1650308580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,6 +4376,7 @@ GameObject:
   - component: {fileID: 1739136246}
   - component: {fileID: 1739136245}
   - component: {fileID: 1739136250}
+  - component: {fileID: 1739136251}
   m_Layer: 0
   m_Name: Push - 8
   m_TagString: Untagged
@@ -4529,8 +4411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 0
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -4560,48 +4440,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1739136245}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1739136245}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: btn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1739136245}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &1739136247
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -4823,6 +4661,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1739136251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739136243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 3
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1785872441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4919,6 +4780,7 @@ GameObject:
   - component: {fileID: 1826778302}
   - component: {fileID: 1826778301}
   - component: {fileID: 1826778306}
+  - component: {fileID: 1826778307}
   m_Layer: 0
   m_Name: Push - 3
   m_TagString: Untagged
@@ -4953,8 +4815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d1325cc79f03f49ba14fc50eee2ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 1
-  buttonId: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -4984,48 +4844,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: 0.3
   deadZone: 0.1
-  onPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1826778301}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1826778301}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: btn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1826778301}
-        m_TargetAssemblyTypeName: ButtonRenderer, Assembly-CSharp
-        m_MethodName: UserUnpressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!153 &1826778303
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -5247,6 +5065,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1826778307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826778299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0780507f6a554b95544e815461e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRenderer: {fileID: 0}
+  interactionProperty:
+    buttonPositionType: 0
+    buttonType: 0
+  buttonId: 0
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1995556352
 GameObject:
   m_ObjectHideFlags: 0

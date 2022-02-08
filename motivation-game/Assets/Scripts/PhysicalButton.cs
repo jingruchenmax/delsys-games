@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(InteractionBehavior))]
 public class PhysicalButton : MonoBehaviour
 {
     [SerializeField] private float threshold = 0.1f;
     [SerializeField] private float deadZone = 0.025f;
-    public UnityEvent onPressed, onReleased;
 
+
+    private InteractionBehavior interactionBehavior;
     private bool _isPressed;
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        interactionBehavior = GetComponent<InteractionBehavior>();
+    }
     void Start()
     {
         _startPos = transform.localPosition;
@@ -25,12 +32,14 @@ public class PhysicalButton : MonoBehaviour
     {
         if(!_isPressed && GetValue() + threshold >= 1)
         {
-            Pressed();
+            _isPressed = true;
+            interactionBehavior.onPressed.Invoke();
         }
 
         if (_isPressed && GetValue() - threshold <= 0)
         {
-            Released();
+            _isPressed = false;
+            interactionBehavior.onReleased.Invoke();
         }
 
     }
@@ -41,18 +50,5 @@ public class PhysicalButton : MonoBehaviour
         if (Mathf.Abs(value) < deadZone) value = 0;
         return Mathf.Clamp(value, -1, 1);
     }
-    private void Pressed()
-    {
-        _isPressed = true;
-        onPressed.Invoke();
-        Debug.Log("Pressed");
 
-    }
-
-    private void Released()
-    {
-        _isPressed = false;
-        onReleased.Invoke();
-        Debug.Log("Released");
-    }
 }
