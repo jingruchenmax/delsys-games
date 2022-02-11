@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2493500379460786398}
   - component: {fileID: 7223110010805293679}
   m_Layer: 0
-  m_Name: Cylinder.006
+  m_Name: Dial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4541369282159781724}
   - component: {fileID: 2044818335402195990}
   m_Layer: 0
-  m_Name: Cylinder.005
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2781,8 +2781,8 @@ GameObject:
   - component: {fileID: 1096715369}
   - component: {fileID: 1096715368}
   - component: {fileID: 1096715367}
-  - component: {fileID: 1096715366}
   - component: {fileID: 1096715371}
+  - component: {fileID: 1096715366}
   - component: {fileID: 1096715372}
   m_Layer: 0
   m_Name: Push - 1
