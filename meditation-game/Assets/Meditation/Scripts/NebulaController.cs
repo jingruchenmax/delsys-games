@@ -6,7 +6,6 @@ public class NebulaController : MonoBehaviour
 {
     private NebulaRenderer[] nebulaRenderers;
     public Color initialColor;
-    public float alphaValue = 0.3f;
     public float step;
     private void Start()
     {
@@ -15,7 +14,6 @@ public class NebulaController : MonoBehaviour
         {
             nr.step = step;
             nr.initialColor = initialColor;
-            nr.alphaValue = alphaValue;
         }
     }
 
@@ -43,13 +41,4 @@ public class NebulaController : MonoBehaviour
         }
     }
 
-    public void NebulaRendererBreatheIn()
-    {
-        NebulaRendererSetColorAlpha(0.6f);
-    }
-
-    public void NebulaRendererBreatheOut()
-    {
-        NebulaRendererSetColorAlpha(0.6f);
-    }
 }
