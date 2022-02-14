@@ -24,5 +24,4 @@ public class InteractionProperty
 {
     public InteractionPositionType buttonPositionType;
     public InteractionType buttonType;
-
 }

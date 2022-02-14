@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class RimController : MonoBehaviour
 {
-    Material planetMaterial;
-    // this must be used with celestial shader
-    // Start is called before the first frame update
-    void Awake()
-    {
-        planetMaterial = GetComponent<Renderer>().material;
-    }
+    private RimRenderer[] rimRenderers;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        rimRenderers = GetComponentsInChildren<RimRenderer>();
     }
 }

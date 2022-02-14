@@ -36,6 +36,7 @@ public class SimonSays : MonoBehaviour
     //It should always take the button id.
     private List<InteractionBehavior> _buttonOrder = new List<InteractionBehavior>();
     private List<InteractionBehavior> _interactionBehavior = new List<InteractionBehavior>();
+    
     private GameObject finalScreen;
     private int rounds = 0;
     private int stages = 0;
@@ -139,8 +140,6 @@ public class SimonSays : MonoBehaviour
     private int DifficultScalingGenerator()
     {
         int index = 0;
-
-
         return index;
     }
 
@@ -222,26 +221,5 @@ public class SimonSays : MonoBehaviour
             _buttonOrder[i].interactionRenderer.Default();
         }
         EnableButtons();
-    }
-
-
-    private void StageRestartScreen()
-    {
-        // This is the original simon says final screen. Now it means stage restart with the same difficulty level. 
-        Vector3 pos = new Vector3(0, 0, 0);
-        //  finalScreen = Instantiate(Failed, pos, Quaternion.identity);
-        //  finalScreen.SetActive(false);
-        //  finalScreen.transform.SetParent(mainUI, false);
-
-    }
-
-    private void AllClearScreen()
-    {
-        // When stages = total stage
-        Vector3 pos = new Vector3(0, 0, 0);
-        //  finalScreen = Instantiate(Failed, pos, Quaternion.identity);
-        //  finalScreen.SetActive(false);
-        //  finalScreen.transform.SetParent(mainUI, false);
-
     }
 }
