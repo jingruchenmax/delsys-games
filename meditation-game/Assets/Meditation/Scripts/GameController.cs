@@ -1,57 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEditor;
 
+[ExecuteInEditMode]
 public class GameController : MonoBehaviour
-{  
-    [Header("Nebula")]
-    public GameObject particle;
-    Material pMaterial;
-    public float inhaleSeconds = 3.0f;
-    public float exhaleSeconds = 7.0f;
-    float step;
+{
+    [Header("Guided Meditation")]
+    public float breathIn=6;
+    public float breathOut=2;
+    public float animationSmoothness = 0.2f;
 
-    [Header("Planets")]
-    public List<GameObject> planets;
-    List<Material> planetMaterials;
-    // Start is called before the first frame update
+    //Out animation will be divided into two parts, one in the beginning and one in the end.
+    public AnimationCurve curve;
 
-    // the guidance system need to be seperated from here, it is a visual render module
+    [Header("Controllers")]
+    public NebulaController nebulaController;
+    public RimController rimController;
+    public float step = 0.001f;
 
-    // rim color rendering system same;
-    void Start()
+    void Awake()
     {
-        //Deal with material
-        pMaterial = particle.GetComponent<ParticleSystemRenderer>().material;
-        Color rgbTemp = Color.HSVToRGB(0, 0.36f, 0.7f);
-        pMaterial.SetColor("_TintColor", new Color(rgbTemp.r, rgbTemp.g, rgbTemp.b, 0.3f));
-        step = 1f / (50f * (inhaleSeconds + exhaleSeconds));
-
-        //Deal with planet
-        planetMaterials = new List<Material>();
-        foreach (GameObject ob in planets)
-        {
-            Material m = ob.GetComponent<MeshRenderer>().material;
-            planetMaterials.Add(m);
-            m.SetColor("_FresnelCol", new Color(rgbTemp.r, rgbTemp.g, rgbTemp.b, 0.9f));
-        }
-
+        nebulaController.step = step;
+        rimController.step = step;
+        nebulaController.initialColor = Color.HSVToRGB(0, 0.36f, 0.7f);
+        rimController.initialColor = Color.HSVToRGB(0, 0.36f, 0.7f);
+        curve = AnimationCurve.Constant(0, 8, 0.3f);
     }
 
+    private void Start()
+    {
+        InitiateMeditationGuide();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        Color rgbColor = pMaterial.GetColor("_TintColor");
-        float h;
-        float s;
-        float v;    
-        Color.RGBToHSV(rgbColor,out h,out s,out v);
-        if (Mathf.Abs(h-1)<0.01f) h = 0;
-        Color rgbTemp = Color.HSVToRGB(h+step, 0.36f, 0.7f);
-        pMaterial.SetColor("_TintColor", new Color(rgbTemp.r, rgbTemp.g, rgbTemp.b, 0.3f));
-        foreach (Material m in planetMaterials)
+        rimController.RimRendererUpdate();
+        nebulaController.NebulaRendererUpdate();
+        MeditationGuide();
+    }
+
+    // This is for guiding
+
+    void InitiateMeditationGuide()
+    {
+        curve = AnimationCurve.Constant(0, breathIn+breathOut, 0.3f);
+        curve.AddKey(breathOut/2- animationSmoothness, 0.3f);
+        curve.AddKey(breathOut/2,0.5f);
+        curve.AddKey(breathOut / 2 + animationSmoothness, 0.3f);
+
+        curve.AddKey((breathOut / 2 + breathIn)- animationSmoothness, 0.3f);
+        curve.AddKey((breathOut / 2 + breathIn), 0.5f);
+        curve.AddKey((breathOut / 2 + breathIn)+ animationSmoothness, 0.3f);
+
+        curve.postWrapMode = WrapMode.Loop;
+
+        for(int i = 0; i < curve.keys.Length; i++)
         {
-            m.SetColor("_FresnelCol", new Color(rgbTemp.r, rgbTemp.g, rgbTemp.b, 0.9f));
+            AnimationUtility.SetKeyLeftTangentMode(curve, i, AnimationUtility.TangentMode.ClampedAuto);
         }
+    }
+    void MeditationGuide()
+    {
+        nebulaController.NebulaRendererSetColorAlpha(curve.Evaluate(Time.realtimeSinceStartup));
     }
 }
