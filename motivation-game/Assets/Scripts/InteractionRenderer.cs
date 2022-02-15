@@ -11,17 +11,20 @@ public class InteractionRenderer : MonoBehaviour
     private InteractionBehavior interactionBehavior;
     private InteractionType buttonType;
     Material material;
+
     private bool isToggle=false;
     //onTrigger event is for audio render
     public UnityEvent onTrigger;
-    //is the second child
 
+    private Color initialColor;
+    private Color highlightColor;
+    private Color pressedColor;
     void Awake()
     {
         interactionBehavior = GetComponent<InteractionBehavior>();
         buttonType = interactionBehavior.interactionProperty.buttonType;
         material = GetComponentInChildren<Renderer>().material;
-
+        SetColors();
         Default();
         if (buttonType == InteractionType.Toggle)
         {
@@ -29,25 +32,38 @@ public class InteractionRenderer : MonoBehaviour
         }
     }
 
+    void SetColors()
+    {
+        initialColor = material.color;
+        float h;
+        float s;
+        float v;
+        Color.RGBToHSV(initialColor, out h, out s, out v);
+        Color temp = Color.black;
+        highlightColor = temp;
+        temp = Color.HSVToRGB(h, Mathf.Clamp(s + 0.5f, 0, 1), Mathf.Clamp(v + 0.5f, 0, 1));
+        pressedColor = temp;
+    }
     public void Highlight()
     {
         onTrigger.Invoke();
-        material.color = Color.yellow;
+
+        material.color = highlightColor;
     }
 
     //For set back
     public void Default()
     {
-        material.color = Color.blue;
+        material.color = initialColor;
         if(isToggle == true)
         {
-            material.color = Color.red;
+            material.color = highlightColor;
         }
     }
 
     public void Restart()
     {
-        material.color = Color.blue;
+        material.color = initialColor;
         isToggle = false;
     }
     public void UserPressed()
@@ -56,13 +72,13 @@ public class InteractionRenderer : MonoBehaviour
 
         if (buttonType == InteractionType.Button)
         {
-            material.color = Color.red;
+            material.color = pressedColor;
         }
 
 
         if (buttonType == InteractionType.Toggle)
         {
-            material.color = Color.red;
+            material.color = pressedColor;
             isToggle = !isToggle;
         }
 
@@ -83,12 +99,6 @@ public class InteractionRenderer : MonoBehaviour
                 Default();
             }
         }
-    }
-
-
-    public void Hover()
-    {
-        material.color = new Color(0, 1, 0, 0.1f);
     }
 
 

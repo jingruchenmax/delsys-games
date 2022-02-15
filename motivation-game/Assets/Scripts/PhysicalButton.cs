@@ -33,13 +33,13 @@ public class PhysicalButton : MonoBehaviour
         if(!_isPressed && GetValue() + threshold >= 1)
         {
             _isPressed = true;
-            interactionBehavior.onPressed.Invoke();
+           interactionBehavior.onPressed.Invoke();
         }
 
         if (_isPressed && GetValue() - threshold <= 0)
         {
             _isPressed = false;
-            interactionBehavior.onReleased.Invoke();
+           interactionBehavior.onReleased.Invoke();
         }
 
     }
