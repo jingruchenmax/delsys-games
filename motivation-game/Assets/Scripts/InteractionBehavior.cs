@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
+using Buttons;
 
 [RequireComponent(typeof(InteractionRenderer))]
 public class InteractionBehavior : MonoBehaviour
@@ -10,6 +11,9 @@ public class InteractionBehavior : MonoBehaviour
     [HideInInspector]
     public InteractionRenderer interactionRenderer;
     public InteractionProperty interactionProperty;
+    [Tooltip("Used to locate buttons based on group and the visual")]
+    public ButtonInfo buttonIdentification;
+    [Header("Used Internally. Dont change this")]
     public int buttonId; // it is set when start the game, and set in SimonSays
 
     SimonSays simonSays;
@@ -24,12 +28,6 @@ public class InteractionBehavior : MonoBehaviour
         onPressed.AddListener(CheckObject);
         onPressed.AddListener(interactionRenderer.UserPressed);
         onReleased.AddListener(interactionRenderer.UserUnpressed);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void CheckObject()

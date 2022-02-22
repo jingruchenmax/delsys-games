@@ -907,6 +907,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 0
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 1
+    button: 2
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -1537,6 +1542,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 1
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 1
+    button: 0
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -2348,6 +2358,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 1
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 0
+    button: 1
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -2853,6 +2868,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 0
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 0
+    button: 3
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -3913,6 +3933,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 1
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 0
+    button: 0
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -4269,6 +4294,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 1
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 0
+    button: 4
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -5122,6 +5152,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 1
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 1
+    button: 1
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -5416,6 +5451,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 0
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 0
+    button: 0
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -5781,6 +5821,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 1
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 1
+    button: 4
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -6209,6 +6254,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 0
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 0
+    button: 2
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -6878,6 +6928,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 0
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 1
+    button: 3
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -7049,6 +7104,11 @@ MonoBehaviour:
   interactionProperty:
     buttonPositionType: 0
     buttonType: 0
+  buttonIdentification:
+    name: 
+    group: 0
+    button: 0
+    buttonNumber: 0
   buttonId: 0
   onPressed:
     m_PersistentCalls:
