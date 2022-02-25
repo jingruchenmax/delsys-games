@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dfd8b7407bebb49b340846c2640f3c, type: 3}
+  m_Name: Custom Game Test
+  m_EditorClassIdentifier: 
+  description: This is a test that the dewv team used to see if sequences are working
+  Stages:
+  - name: Test Sequence
+    sequence: {fileID: 11400000, guid: ea5de9a2af8a2444db9eff757428c443, type: 2}
+  - name: Small Yellow
+    sequence: {fileID: 11400000, guid: 83e437f8c0243b84298397b2eb7b3e02, type: 2}
+  - name: Test Sequence
+    sequence: {fileID: 11400000, guid: ea5de9a2af8a2444db9eff757428c443, type: 2}

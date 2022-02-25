@@ -2113,23 +2113,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5775b6ebe314f045a391e8d3899c0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternMode: 0
+  patternMode: 1
+  Zones:
+  - name: Left Arm
+    enabled: 1
+  - name: Right Arm
+    enabled: 1
+  - name: Left Leg
+    enabled: 1
+  - name: Right Leg
+    enabled: 1
+  - name: Upper Panel
+    enabled: 1
   buttons:
-  - {fileID: 5552401946311699606}
-  - {fileID: 4823545618155654247}
-  - {fileID: 5295016060883594873}
   - {fileID: 5295016060883594873}
   - {fileID: 789589194803116399}
-  - {fileID: 1432539124}
   - {fileID: 1337681338}
+  - {fileID: 537602562714303431}
+  - {fileID: 1432539124}
+  - {fileID: 5552401946311699606}
   - {fileID: 619996533}
   - {fileID: 899462532}
+  - {fileID: 4823545618155654247}
   - {fileID: 4075345720779147869}
   currentRounds: {fileID: 1441001742}
   totalStages: 3
   roundsPerStage: 12
   Failed: {fileID: 816058876}
-  setButtonOrder: 030000000300000004000000050000000500000004000000030000000200000001000000010000000200000003000000030000000200000002000000
+  customGame: {fileID: 11400000, guid: 9ae78228d0a48324590faa6be03aa7ba, type: 2}
+  setButtonOrder: 
 --- !u!114 &1193460830
 MonoBehaviour:
   m_ObjectHideFlags: 0

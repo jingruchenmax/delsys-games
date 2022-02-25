@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using Buttons;
 
 
 public enum InteractionPatternMode
@@ -19,8 +20,9 @@ public class SimonSays : MonoBehaviour
 {
     public static SimonSays instance { get; private set; }
     public InteractionPatternMode patternMode;
-   
+
     [Header("Core")]
+    public Zone[] Zones; //Should be in order of and equal to the enum of groups (Buttons.Group)
     public GameObject[] buttons;
     public Text currentRounds;
     public int totalStages = 10;
@@ -30,7 +32,8 @@ public class SimonSays : MonoBehaviour
 
     [Header("Set Pattern")]
     [Tooltip("List Starts at 1, not 0")]
-    public List<int> setButtonOrder; // Start From 1!!!!
+    public CustomGame customGame;
+    public List<int> fixedButtonOrder; // Start From 1!!!!
 
     //This is the order of button clicks
     //It should always take the button id.
@@ -40,7 +43,6 @@ public class SimonSays : MonoBehaviour
     private GameObject finalScreen;
     private int rounds = 0;
     private int stages = 0;
-
 
     private int round
     {
@@ -88,6 +90,11 @@ public class SimonSays : MonoBehaviour
             _interactionBehavior.Add(ib);
         }
 
+        if(patternMode == InteractionPatternMode.SetPattern)
+        {
+            totalStages = customGame.Stages.Length;
+        }
+
         //_interactionBehavior.Sort();
         StartNewStage();
     }
@@ -121,7 +128,9 @@ public class SimonSays : MonoBehaviour
         }
         if (patternMode == InteractionPatternMode.SetPattern)
         {
-            rndBtn = _interactionBehavior[setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1];
+            //rndBtn = _interactionBehavior[setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1];
+            rndBtn = _interactionBehavior[fixedButtonOrder[(_buttonOrder.Count) % fixedButtonOrder.Count]];
+            //rndBtn = _interactionBehavior[setButtonOrder[round] - 1];
 
         }
         if (patternMode == InteractionPatternMode.WithDifficultyAdjustment)
@@ -201,6 +210,11 @@ public class SimonSays : MonoBehaviour
         Debug.Log("New Stage " + "stage: " + stage);
         counter = 0;
         round = 0;
+        if (patternMode == InteractionPatternMode.SetPattern)
+        {
+            fixedButtonOrder = customGame.Stages[stage - 1].sequence.GenerateSequence(_interactionBehavior, Zones);
+            roundsPerStage = customGame.Stages[stage - 1].sequence.GetNumberOfRounds();
+        }
         DisableButtons();
         await Task.Delay(1000);
         _buttonOrder.Clear();
