@@ -3,50 +3,44 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Events;
+
 [ExecuteInEditMode]
 public class GameController : MonoBehaviour
 {
     [Header("Input")]
     public bool isInhale = false;
-    public float deltaAlpha = 0.02f;
-    public float deltaRange = 0.05f;
 
     [Header("Guided Meditation")]
-    public float breathIn=6;
-    public float breathOut=2;
-    public float animationSmoothness = 0.4f;
-    //Out animation will be divided into two parts, one in the beginning and one in the end.
-    public AnimationCurve curve;
+    public float breatheIn=6;
+    public float breatheHold = 2;
+    public float breatheOut=2;
+    private float breathPeriod { get { return (breatheIn + breatheOut + breatheHold); } }
 
-    [Header("Controllers")]
-    public NebulaController nebulaController;
-    public RimController rimController;
-    public float step = 0.001f;
+    [Header("Feedback")]
+    public UnityEvent onInhale;
+    public UnityEvent onHold;
+    public UnityEvent onExhale;
+
+    [Header("Meditation")]
+    public UnityEvent onEveryFrame;
+
+    [HideInInspector]
+    public float meditationAnimationValue { get { return LerpMeditationValue(); } }
 
     void Awake()
     {
-        nebulaController.step = step;
-        rimController.step = step;
-        nebulaController.initialColor = Color.HSVToRGB(0, 0.36f, 0.7f);    
-        rimController.initialColor = Color.HSVToRGB(0, 0.36f, 0.7f);
-        rimController.deltaAlpha = deltaAlpha;
-        rimController.deltaRange = deltaRange;
+
     }
 
-    private void Start()
+    void Start()
     {
-        InitiateMeditationGuide();
 
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-
-        rimController.RimRendererUpdate();
-        nebulaController.NebulaRendererUpdate();
-        MeditationGuide();
-        InputVisualization();
+        onEveryFrame.Invoke();
         RespirationInput();
     }
 
@@ -55,47 +49,39 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.I))
         {
-            isInhale = true;
+            onInhale.Invoke();
         }
-        else isInhale = false;
-    }
-
-    // This is for meditation guiding
-
-    void InitiateMeditationGuide()
-    {
-        curve = AnimationCurve.Constant(0, breathIn+breathOut, 0.1f);
-        curve.AddKey(breathOut/2- animationSmoothness, 0.1f);
-        curve.AddKey(breathOut/2,0.5f);
-        curve.AddKey(breathOut/2 + animationSmoothness, 0.5f);
-
-        curve.AddKey((breathOut / 2 + breathIn)- animationSmoothness, 0.5f);
-        curve.AddKey((breathOut / 2 + breathIn), 0.5f);
-        curve.AddKey((breathOut / 2 + breathIn)+ animationSmoothness, 0.1f);
-
-        curve.postWrapMode = WrapMode.Loop;
-
-        for(int i = 0; i < curve.keys.Length; i++)
+        if (Input.GetKey(KeyCode.H))
         {
-            AnimationUtility.SetKeyLeftTangentMode(curve, i, AnimationUtility.TangentMode.ClampedAuto);
+            onHold.Invoke();
         }
-    }
-    void MeditationGuide()
-    {
-        nebulaController.NebulaRendererSetColorAlpha(curve.Evaluate(Time.realtimeSinceStartup));
+        if (Input.GetKey(KeyCode.O))
+        {
+            onExhale.Invoke();
+        }
     }
 
-    // This is for input visualization
+    // meditation guiding
 
-    void InputVisualization()
+    float LerpMeditationValue()
     {
-        if (isInhale)
+        float timeInPeriod = Time.timeSinceLevelLoad - Mathf.Floor(Time.timeSinceLevelLoad / breathPeriod)*breathPeriod;
+        if (timeInPeriod <= breatheIn)
         {
-            rimController.RimRendererInhale();
+            return Mathf.Lerp(0, 1, timeInPeriod / breatheIn);
         }
-        else if (!isInhale)
+
+        else if (timeInPeriod > breatheIn && timeInPeriod<=breatheIn+breatheHold)
         {
-            rimController.RimRendererExhale();
+            return 1;
         }
+
+        else if (timeInPeriod > breatheIn + breatheHold && timeInPeriod<=breathPeriod)
+        {
+            return Mathf.Lerp(1, 0, (timeInPeriod-(breatheIn+breatheHold)) / breatheOut);      
+        }
+        return -1;
     }
+
+
 }
