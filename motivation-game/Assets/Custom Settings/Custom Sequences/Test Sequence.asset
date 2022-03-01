@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Test Sequence
   m_EditorClassIdentifier: 
   sequenceName: Test Sequence
+  isTutorial: 0
   Description: Its a sequence
   sequence:
   - name: Left_Arm Round_Red

@@ -7,7 +7,7 @@ namespace Buttons
     //Used to sort buttons into groups based on what limb is intended to interact with them and or area they belong to
     public enum Group {Left_Arm, Right_Arm, Left_Leg, Right_Leg, Upper_Panel};
     //This is an enum of every button type in the game
-    public enum ButtonVisual { Round_Red, Round_Green, Stop, Yellow_Rectangle, Power, Lever, Pedal };
+    public enum ButtonVisual { Round_Red, Round_Green, Stop, Yellow_Rectangle, Power, Big_Lever, Small_Lever, Pedal };
 
     /*This class is representing a seires of buttons that the user would press in a stage. 
      * The progression of a stage starts with the first button and then asks the user to reapeat it. 
@@ -19,6 +19,7 @@ namespace Buttons
     public class CustomSequence : ScriptableObject
     {
         [SerializeField] private string sequenceName = "New Sequence";
+        [SerializeField] public bool isTutorial;
         [SerializeField] [TextArea] private string Description = "Its a sequence";
         [SerializeField] private ButtonInfo[] sequence;
 

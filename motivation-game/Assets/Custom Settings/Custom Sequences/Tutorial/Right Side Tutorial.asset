@@ -10,8 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a48ce37bca15c4c9b9be8d3b4d9e57, type: 3}
-  m_Name: Right Leg Tutorial 1
+  m_Name: Right Side Tutorial
   m_EditorClassIdentifier: 
-  sequenceName: New Sequence
-  Description: Its a sequence
-  sequence: []
+  sequenceName: Tutorial Right Side
+  isTutorial: 1
+  Description: Right Side Tutorial
+  sequence:
+  - name: Right_Arm Round_Red
+    group: 1
+    button: 0
+    buttonNumber: 0
+  - name: Right_Leg Pedal
+    group: 3
+    button: 7
+    buttonNumber: 0
+  - name: Right_Arm Big_Lever
+    group: 1
+    button: 5
+    buttonNumber: 0

@@ -30,9 +30,10 @@ public class SimonSays : MonoBehaviour
     public GameObject Failed;
     //public Transform mainUI;
 
-    [Header("Set Pattern")]
+    [Header("Custom Games Options")]
     [Tooltip("List Starts at 1, not 0")]
     public CustomGame customGame;
+    public bool skipTutorial;
     public List<int> fixedButtonOrder; // Start From 1!!!!
 
     //This is the order of button clicks
@@ -212,8 +213,17 @@ public class SimonSays : MonoBehaviour
         round = 0;
         if (patternMode == InteractionPatternMode.SetPattern)
         {
-            fixedButtonOrder = customGame.Stages[stage - 1].sequence.GenerateSequence(_interactionBehavior, Zones);
-            roundsPerStage = customGame.Stages[stage - 1].sequence.GetNumberOfRounds();
+            if(customGame.Stages[stage - 1].sequence.isTutorial && skipTutorial)
+            {
+                Debug.Log("Skipping tutorial sequence...");
+                StartNewStage();
+                return;
+            }
+            else
+            {
+                fixedButtonOrder = customGame.Stages[stage - 1].sequence.GenerateSequence(_interactionBehavior, Zones);
+                roundsPerStage = customGame.Stages[stage - 1].sequence.GetNumberOfRounds();
+            }
         }
         DisableButtons();
         await Task.Delay(1000);

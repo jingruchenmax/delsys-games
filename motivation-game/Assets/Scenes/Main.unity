@@ -2141,7 +2141,8 @@ MonoBehaviour:
   roundsPerStage: 12
   Failed: {fileID: 816058876}
   customGame: {fileID: 11400000, guid: 9ae78228d0a48324590faa6be03aa7ba, type: 2}
-  setButtonOrder: 
+  skipTutorial: 1
+  fixedButtonOrder: 
 --- !u!114 &1193460830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3829,7 +3830,7 @@ BoxCollider:
   m_GameObject: {fileID: 537602562714303431}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
