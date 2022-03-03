@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NebulaRenderer : MonoBehaviour
 {
-    public Color initialColor = Color.HSVToRGB(0, 0.36f, 0.7f);
-    public float step = 0.01f; //color changing speed
     public float alphaValue = 0.3f;
     Material nebulaMaterial;
    
@@ -19,8 +17,7 @@ public class NebulaRenderer : MonoBehaviour
 
     void InitialSetting()
     {
-        nebulaMaterial.SetColor("_TintColor", new Color(initialColor.r, initialColor.g, initialColor.b, 0.3f));
-       
+        nebulaMaterial.SetColor("_TintColor", new Color(AnimationVariables.initialColor.r, AnimationVariables.initialColor.g, AnimationVariables.initialColor.b, 0.3f));
     }
     public void RainbowColorWave()
     {
@@ -30,7 +27,7 @@ public class NebulaRenderer : MonoBehaviour
         float v;
         Color.RGBToHSV(rgbColor, out h, out s, out v);
         if (Mathf.Abs(h - 1) < 0.01f) h = 0;
-        Color rgbTemp = Color.HSVToRGB(h + step, 0.36f, 0.7f);
+        Color rgbTemp = Color.HSVToRGB(h + AnimationVariables.step, 0.36f, 0.7f);
         nebulaMaterial.SetColor("_TintColor", new Color(rgbTemp.r, rgbTemp.g, rgbTemp.b, alphaValue));
     }
 

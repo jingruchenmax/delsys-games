@@ -5,16 +5,11 @@ using UnityEngine;
 public class NebulaController : MonoBehaviour
 {
     private NebulaRenderer[] nebulaRenderers;
-    public Color initialColor;
-    public float step;
+    private GameController gameController;
     private void Start()
     {
         nebulaRenderers = GetComponentsInChildren<NebulaRenderer>();
-        foreach (NebulaRenderer nr in nebulaRenderers)
-        {
-            nr.step = step;
-            nr.initialColor = initialColor;
-        }
+        gameController = GameObject.Find("Scripts").GetComponent<GameController>();
     }
 
     public void NebulaRendererUpdate()
@@ -33,11 +28,11 @@ public class NebulaController : MonoBehaviour
         }
     }
 
-    public void NebulaRendererSetColorAlpha(float alpha)
+    public void NebulaRendererSetColorAlpha()
     {
         foreach (NebulaRenderer nr in nebulaRenderers)
         {
-            nr.ColorSetAlpha(alpha);
+            nr.ColorSetAlpha(gameController.meditationAnimationValue);
         }
     }
 
