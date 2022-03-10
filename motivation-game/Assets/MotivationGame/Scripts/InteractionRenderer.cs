@@ -7,24 +7,25 @@ using UnityEngine.Events;
 
 public class InteractionRenderer : MonoBehaviour
 {
-    // this handles two buttons
+
     private InteractionBehavior interactionBehavior;
     private InteractionType buttonType;
     Material material;
-
     private bool isToggle=false;
     //onTrigger event is for audio render
     public UnityEvent onTrigger;
-
-    private Color initialColor;
-    private Color highlightColor;
-    private Color pressedColor;
+    
+    Color highlightColor = Color.yellow;
+    Color initialColor = Color.black;
+    Color pressedColor = Color.red;
+    float intensity = 1;
+    float factor;
     void Awake()
     {
         interactionBehavior = GetComponent<InteractionBehavior>();
         buttonType = interactionBehavior.interactionProperty.buttonType;
         material = GetComponentInChildren<Renderer>().material;
-        SetColors();
+        factor =  Mathf.Pow(2, intensity);
         Default();
         if (buttonType == InteractionType.Toggle)
         {
@@ -32,53 +33,42 @@ public class InteractionRenderer : MonoBehaviour
         }
     }
 
-    void SetColors()
-    {
-        initialColor = material.color;
-        float h;
-        float s;
-        float v;
-        Color.RGBToHSV(initialColor, out h, out s, out v);
-        Color temp = Color.black;
-        highlightColor = temp;
-        temp = Color.HSVToRGB(h, Mathf.Clamp(s + 0.5f, 0, 1), Mathf.Clamp(v + 0.5f, 0, 1));
-        pressedColor = temp;
-    }
     public void Highlight()
     {
         onTrigger.Invoke();
-
-        material.color = highlightColor;
+        material.SetColor("_EmissionColor",new Color(highlightColor.r*factor,highlightColor.g*factor,highlightColor.b*factor));
     }
 
     //For set back
     public void Default()
     {
-        material.color = initialColor;
-        if(isToggle == true)
+        
+        material.SetColor("_EmissionColor", initialColor);
+        if (isToggle == true)
         {
-            material.color = highlightColor;
+            material.SetColor("_EmissionColor", new Color(highlightColor.r * factor, highlightColor.g * factor, highlightColor.b * factor));
         }
     }
 
     public void Restart()
     {
-        material.color = initialColor;
+        material.SetColor("_EmissionColor", initialColor);
         isToggle = false;
     }
     public void UserPressed()
     {
         onTrigger.Invoke();
-
+        
         if (buttonType == InteractionType.Button)
-        {
-            material.color = pressedColor;
+        {        
+            material.SetColor("_EmissionColor", new Color(pressedColor.r * factor, pressedColor.g * factor, pressedColor.b * factor));
+            Debug.Log(material.GetColor("_EmissionColor"));
         }
 
 
         if (buttonType == InteractionType.Toggle)
         {
-            material.color = pressedColor;
+            material.SetColor("_EmissionColor", new Color(pressedColor.r * factor, pressedColor.g * factor, pressedColor.b * factor));
             isToggle = !isToggle;
         }
 
@@ -90,7 +80,6 @@ public class InteractionRenderer : MonoBehaviour
         {
             Default();
         }
-
 
         if (buttonType == InteractionType.Toggle)
         {

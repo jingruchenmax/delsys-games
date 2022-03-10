@@ -1261,7 +1261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -2141,7 +2141,7 @@ MonoBehaviour:
   roundsPerStage: 12
   Failed: {fileID: 816058876}
   customGame: {fileID: 11400000, guid: 9ae78228d0a48324590faa6be03aa7ba, type: 2}
-  setButtonOrder: 
+  fixedButtonOrder: 
 --- !u!114 &1193460830
 MonoBehaviour:
   m_ObjectHideFlags: 0
