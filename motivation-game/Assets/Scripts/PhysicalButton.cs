@@ -3,52 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(InteractionBehavior))]
-public class PhysicalButton : MonoBehaviour
+namespace SimonSaysGame
 {
-    [SerializeField] private float threshold = 0.1f;
-    [SerializeField] private float deadZone = 0.025f;
-
-
-    private InteractionBehavior interactionBehavior;
-    private bool _isPressed;
-    private Vector3 _startPos;
-    private ConfigurableJoint _joint;
-    // Start is called before the first frame update
-
-    private void Awake()
+    [RequireComponent(typeof(InteractionBehavior))]
+    public class PhysicalButton : MonoBehaviour
     {
-        interactionBehavior = GetComponent<InteractionBehavior>();
-    }
-    void Start()
-    {
-        _startPos = transform.localPosition;
-        _joint = GetComponent<ConfigurableJoint>();
+        [SerializeField] private float threshold = 0.1f;
+        [SerializeField] private float deadZone = 0.025f;
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(!_isPressed && GetValue() + threshold >= 1)
+        private InteractionBehavior interactionBehavior;
+        private bool _isPressed;
+        private Vector3 _startPos;
+        private ConfigurableJoint _joint;
+        // Start is called before the first frame update
+
+        private void Awake()
         {
-            _isPressed = true;
-           interactionBehavior.onPressed.Invoke();
+            interactionBehavior = GetComponent<InteractionBehavior>();
+        }
+        void Start()
+        {
+            _startPos = transform.localPosition;
+            _joint = GetComponent<ConfigurableJoint>();
+
         }
 
-        if (_isPressed && GetValue() - threshold <= 0)
+        // Update is called once per frame
+        void Update()
         {
-            _isPressed = false;
-           interactionBehavior.onReleased.Invoke();
+            if (!_isPressed && GetValue() + threshold >= 1)
+            {
+                _isPressed = true;
+                interactionBehavior.onPressed.Invoke();
+            }
+
+            if (_isPressed && GetValue() - threshold <= 0)
+            {
+                _isPressed = false;
+                interactionBehavior.onReleased.Invoke();
+            }
+
+        }
+
+        float GetValue()
+        {
+            var value = Vector3.Distance(_startPos, transform.localPosition) / _joint.linearLimit.limit;
+            if (Mathf.Abs(value) < deadZone) value = 0;
+            return Mathf.Clamp(value, -1, 1);
         }
 
     }
-
-    float GetValue()
-    {
-        var value = Vector3.Distance(_startPos, transform.localPosition) / _joint.linearLimit.limit;
-        if (Mathf.Abs(value) < deadZone) value = 0;
-        return Mathf.Clamp(value, -1, 1);
-    }
-
 }
+

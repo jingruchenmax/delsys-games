@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Buttons
+namespace SimonSaysGame
 {
     //Used to sort buttons into groups based on what limb is intended to interact with them and or area they belong to
     public enum Group {Left_Arm, Right_Arm, Left_Leg, Right_Leg, Upper_Panel};

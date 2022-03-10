@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Buttons;
+namespace SimonSaysGame 
+{ 
 
 [CreateAssetMenu(fileName = "Custom Game", menuName = "Movement Game/Custom Game", order = 1)]
 public class CustomGame : ScriptableObject
@@ -28,3 +29,4 @@ public struct Stage
     public CustomSequence sequence;
 }
 
+}
