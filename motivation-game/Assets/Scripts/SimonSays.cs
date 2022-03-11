@@ -175,6 +175,7 @@ namespace SimonSaysGame
             if (round == roundsPerStage && stage == totalStages)
             {
                 Debug.Log("Reach the end");
+                // Winning status
             }
             else if (round == roundsPerStage)
             {
@@ -191,7 +192,6 @@ namespace SimonSaysGame
         {
             counter = 0;
             round = 0;
-            Debug.Log("Game Restart " + "stage: " + stage);
             DisableButtons();
             for (int i = 0; i < _interactionBehavior.Count; i++)
             {
@@ -208,7 +208,6 @@ namespace SimonSaysGame
         private async void StartNewStage()
         {
             stage++;
-            Debug.Log("New Stage " + "stage: " + stage);
             counter = 0;
             round = 0;
             if (patternMode == InteractionPatternMode.SetPattern)

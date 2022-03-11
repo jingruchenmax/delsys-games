@@ -46,7 +46,7 @@ public class InteractionRenderer : MonoBehaviour
         material.SetColor("_EmissionColor", initialColor);
         if (isToggle == true)
         {
-            material.SetColor("_EmissionColor", new Color(highlightColor.r * factor, highlightColor.g * factor, highlightColor.b * factor));
+            material.SetColor("_EmissionColor", new Color(pressedColor.r * factor, pressedColor.g * factor, pressedColor.b * factor));
         }
     }
 
@@ -62,7 +62,6 @@ public class InteractionRenderer : MonoBehaviour
         if (buttonType == InteractionType.Button)
         {        
             material.SetColor("_EmissionColor", new Color(pressedColor.r * factor, pressedColor.g * factor, pressedColor.b * factor));
-            Debug.Log(material.GetColor("_EmissionColor"));
         }
 
 
@@ -76,18 +75,7 @@ public class InteractionRenderer : MonoBehaviour
 
     public void UserUnpressed()
     {
-        if (buttonType == InteractionType.Button)
-        {
             Default();
-        }
-
-        if (buttonType == InteractionType.Toggle)
-        {
-            if (isToggle==false)
-            {
-                Default();
-            }
-        }
     }
 
 
