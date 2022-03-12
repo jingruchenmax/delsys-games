@@ -28,6 +28,8 @@ using Buttons;
         public int totalStages = 10;
         public int roundsPerStage = 10;
         public GameObject Failed;
+        public GameObject gameUI;
+        public GameObject winScreen;
         //public Transform mainUI;
 
         [Header("Set Pattern")]
@@ -96,12 +98,9 @@ using Buttons;
             {
                 totalStages = customGame.Stages.Length;
             }
-
-            //_interactionBehavior.Sort();
-            StartNewStage();
         }
         
-        public void RestartGame()
+        public void StartGame()
         {
             rounds = 0;
             stage = 0;
@@ -189,6 +188,8 @@ using Buttons;
             if (round == roundsPerStage && stage == totalStages)
             {
                 Debug.Log("Reach the end");
+                gameUI.SetActive(false);
+                winScreen.SetActive(true);
                 // Winning status
             }
             else if (round == roundsPerStage)
