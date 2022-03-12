@@ -190,6 +190,8 @@ using Buttons;
                 Debug.Log("Reach the end");
                 gameUI.SetActive(false);
                 winScreen.SetActive(true);
+                sequenceVisualizer.SetTitleText("Restarting...");
+                sequenceVisualizer.ClearFullSequenceDisplay();
                 // Winning status
             }
             else if (round == roundsPerStage)
