@@ -11,7 +11,7 @@ public void RaycastDetection()
       
         if (Physics.Raycast(ray, out hit, 100))
         { 
-        //    Debug.Log("ray!");
+             Debug.Log("ray!");
             hit.transform.localPosition -= new Vector3(0, 0, -0.08f);
         }
     }

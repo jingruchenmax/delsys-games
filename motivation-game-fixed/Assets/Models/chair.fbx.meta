@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: 7e0bf9084b711444996f62076a38e73e
+guid: 5efd4dbdd5523264591301b75a7707b9
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glow
-    second: {fileID: 2100000, guid: c45f3c447f6539f479f9e5c2271f97dc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Levers
-    second: {fileID: 2100000, guid: 85806ed778b35fe49a66a7058d62da82, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Panel Stand
-    second: {fileID: 2100000, guid: ba14a272ed5a91a4088a3a130c394663, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Panel Top
-    second: {fileID: 2100000, guid: 688472835380cca4686337e5a58706bd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pedels
-    second: {fileID: 2100000, guid: abaf9fdd01e32674390d95865256062b, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
