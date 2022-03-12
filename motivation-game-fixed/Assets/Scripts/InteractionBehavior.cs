@@ -13,6 +13,7 @@ public class InteractionBehavior : MonoBehaviour
     public InteractionProperty interactionProperty;
     [Tooltip("Used to locate buttons based on group and the visual")]
     public ButtonInfo buttonIdentification;
+    public Sprite icon;
     [Header("Used Internally. Dont change this")]
     public int buttonId; // it is set when start the game, and set in SimonSays
 
