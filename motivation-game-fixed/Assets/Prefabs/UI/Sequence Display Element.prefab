@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 8502928381076296802}
   - component: {fileID: 8502928381076296804}
   - component: {fileID: 8502928381076296805}
+  - component: {fileID: 1233599724}
   m_Layer: 5
   m_Name: Sequence Display Element
   m_TagString: Untagged
@@ -152,6 +153,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1233599724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502928381076296803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883668c1d713be74a93a50488aeea9d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 8502928380033217935}
 --- !u!1 &8502928381380760794
 GameObject:
   m_ObjectHideFlags: 0

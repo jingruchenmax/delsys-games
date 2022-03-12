@@ -9,7 +9,7 @@ public class SequenceVisualizer : MonoBehaviour
     [SerializeField] private GameObject fullSequenceDisplay;
     [SerializeField] private GameObject sequenceElementDisplay;
     [SerializeField]private List<SequenceDisplayElement> sequenceElements;
-    private int activeElement;
+    private int activeElement = -1;
     private Color selected = new Color(1, 1, 1, 1f);
     private Color notSelected = new Color(1, 1, 1, 0.2f);
 
@@ -22,7 +22,12 @@ public class SequenceVisualizer : MonoBehaviour
     {
         GameObject newElement = Instantiate(sequenceElementDisplay, fullSequenceDisplay.transform);
         newElement.GetComponent<SequenceDisplayElement>().SetIcon(icon);
+        newElement.GetComponent<SequenceDisplayElement>().SetColor(notSelected);
         sequenceElements.Add(newElement.GetComponent<SequenceDisplayElement>());
+    }
+    public void setActiveElementToNone()
+    {
+        activeElement = -1;
     }
     public void ClearFullSequenceDisplay()
     {
@@ -31,11 +36,15 @@ public class SequenceVisualizer : MonoBehaviour
             Destroy(sequenceElements[i].gameObject);
         }
         sequenceElements.Clear();
+        activeElement = -1;
     }
     public void SetActiveSequenceDisplayElement(int element)
     {
         sequenceElements[element].SetColor(selected);
-        sequenceElements[activeElement].SetColor(notSelected);
+        if(activeElement >= 0)
+        {
+            sequenceElements[activeElement].SetColor(notSelected);
+        }
         activeElement = element;
     }
 }

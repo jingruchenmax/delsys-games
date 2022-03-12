@@ -210,6 +210,7 @@ using Buttons;
             }
             await Task.Delay(1000);
             _buttonOrder.Clear();
+            sequenceVisualizer.ClearFullSequenceDisplay();
             AddObject();
         }
 
@@ -226,12 +227,14 @@ using Buttons;
             DisableButtons();
             await Task.Delay(1000);
             _buttonOrder.Clear();
+            sequenceVisualizer.ClearFullSequenceDisplay();
             AddObject();
         }
 
         private async void ShowOrder()
         {
             DisableButtons();
+            sequenceVisualizer.setActiveElementToNone();
             for (int i = 0; i < _buttonOrder.Count; i++)
             {
                 await Task.Delay(500);
