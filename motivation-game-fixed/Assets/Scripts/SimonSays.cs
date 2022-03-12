@@ -100,7 +100,13 @@ using Buttons;
             //_interactionBehavior.Sort();
             StartNewStage();
         }
-
+        
+        public void RestartGame()
+        {
+            rounds = 0;
+            stage = 0;
+            StartNewStage();
+        }
         // Disable and enable buttons can be changed into one toggle function, but here separated for clearity?
         private void DisableButtons()
         {
@@ -201,6 +207,7 @@ using Buttons;
             counter = 0;
             round = 0;
             DisableButtons();
+            sequenceVisualizer.SetTitleText("You hit the wrong button. Try again");
             for (int i = 0; i < _interactionBehavior.Count; i++)
             {
                 await Task.Delay(10);
@@ -234,6 +241,7 @@ using Buttons;
         private async void ShowOrder()
         {
             DisableButtons();
+            sequenceVisualizer.SetTitleText("Showing Patter");
             sequenceVisualizer.setActiveElementToNone();
             for (int i = 0; i < _buttonOrder.Count; i++)
             {
@@ -247,6 +255,7 @@ using Buttons;
                 _buttonOrder[i].interactionRenderer.Default();
             }
             sequenceVisualizer.UpdateCurrentButtonDisplay(_buttonOrder[0].icon, 0);
+            sequenceVisualizer.SetTitleText("Push the button");
             EnableButtons();
         }
     }

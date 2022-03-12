@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SequenceVisualizer : MonoBehaviour
 {
     [SerializeField] private Image currentButtonDisplay;
+    [SerializeField] private Text TopTitleText;
     [SerializeField] private GameObject fullSequenceDisplay;
     [SerializeField] private GameObject sequenceElementDisplay;
     [SerializeField]private List<SequenceDisplayElement> sequenceElements;
@@ -28,6 +29,10 @@ public class SequenceVisualizer : MonoBehaviour
     public void setActiveElementToNone()
     {
         activeElement = -1;
+    }
+    public void SetTitleText(string text)
+    {
+        TopTitleText.text = text;
     }
     public void ClearFullSequenceDisplay()
     {
