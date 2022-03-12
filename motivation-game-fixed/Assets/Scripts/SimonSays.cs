@@ -35,6 +35,8 @@ using Buttons;
         public CustomGame customGame;
         public List<int> fixedButtonOrder; // Start From 1!!!!
 
+        public SequenceVisualizer sequenceVisualizer;
+
         //This is the order of button clicks
         //It should always take the button id.
         private List<InteractionBehavior> _buttonOrder = new List<InteractionBehavior>();
@@ -124,24 +126,26 @@ using Buttons;
             if (patternMode == InteractionPatternMode.PureRandom)
             {
                 rndBtn = _interactionBehavior[UnityEngine.Random.Range(0, _interactionBehavior.Count)];
-            _buttonOrder.Add(rndBtn);
-        }
+                _buttonOrder.Add(rndBtn);
+            }
             if (patternMode == InteractionPatternMode.SetPattern)
             {
                 //rndBtn = _interactionBehavior[setButtonOrder[(_buttonOrder.Count) % setButtonOrder.Count] - 1];
                 rndBtn = _interactionBehavior[fixedButtonOrder[(_buttonOrder.Count) % fixedButtonOrder.Count]];
-            //rndBtn = _interactionBehavior[setButtonOrder[round] - 1];
-            _buttonOrder.Add(rndBtn);
+                //rndBtn = _interactionBehavior[setButtonOrder[round] - 1];
+                _buttonOrder.Add(rndBtn);
 
-        }
+            }
             if (patternMode == InteractionPatternMode.WithDifficultyAdjustment)
             {
                 // here is the part of threshold on difficulty
                 int index = DifficultScalingGenerator();
                 rndBtn = _interactionBehavior[index];
-            _buttonOrder.Add(rndBtn);
+                _buttonOrder.Add(rndBtn);
 
-        }
+            }
+            sequenceVisualizer.AddToFullSequenceDisplay(_buttonOrder[_buttonOrder.Count - 1].icon);
+            sequenceVisualizer.UpdateCurrentButtonDisplay(_buttonOrder[counter].icon, counter);
             await Task.Delay(1000);
             ShowOrder();
         }
@@ -163,7 +167,12 @@ using Buttons;
                 {
                     counter = 0; round++;
                     CheckStageEnd();
+                    
                     Debug.Log("Level Up! + Round: " + round);
+                }
+                else
+                {
+                    sequenceVisualizer.UpdateCurrentButtonDisplay(_buttonOrder[counter].icon, counter);
                 }
             }
             else RestartStage();
@@ -228,11 +237,13 @@ using Buttons;
                 await Task.Delay(500);
                 // show button highlight state
                 _buttonOrder[i].interactionRenderer.Highlight();
+                sequenceVisualizer.UpdateCurrentButtonDisplay(_buttonOrder[i].icon, i);
                 //this is using buttonorder as index again. This will cause difficulty problem
                 await Task.Delay(1000);
                 // show button default state
                 _buttonOrder[i].interactionRenderer.Default();
             }
+            sequenceVisualizer.UpdateCurrentButtonDisplay(_buttonOrder[0].icon, 0);
             EnableButtons();
         }
     }
