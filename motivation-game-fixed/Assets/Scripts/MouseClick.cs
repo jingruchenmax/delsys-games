@@ -17,7 +17,7 @@ public void RaycastDetection()
             }
             else if(hit.transform.name == "Left Lever" || hit.transform.name == "Right Lever")
             {
-                hit.transform.localEulerAngles += new Vector3(10, 0, 0);
+                hit.transform.localEulerAngles += new Vector3(12, 0, 0);
             }
             else if (hit.transform.name == "Handle")
             {

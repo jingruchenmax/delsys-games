@@ -495,8 +495,8 @@ ConfigurableJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_TargetPosition: {x: -90, y: 0, z: 0}
-  m_TargetVelocity: {x: 0.01, y: 0, z: 0}
+  m_TargetPosition: {x: 0, y: 0, z: 0}
+  m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -764,7 +764,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 12
+    limit: 15
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -789,8 +789,8 @@ ConfigurableJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_TargetPosition: {x: -75, y: 0, z: 0}
-  m_TargetVelocity: {x: 1, y: 0, z: 0}
+  m_TargetPosition: {x: 0, y: 0, z: 0}
+  m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -811,9 +811,9 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 60
-    positionDamper: 20
-    maximumForce: 2
+    positionSpring: 50
+    positionDamper: 30
+    maximumForce: 1
   m_AngularYZDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 0.5
-  deadZone: 0.3
+  deadZone: 0.45
 --- !u!82 &245543056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1061,7 +1061,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1506,8 +1506,8 @@ ConfigurableJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_TargetPosition: {x: -90, y: 0, z: 0}
-  m_TargetVelocity: {x: 0.01, y: 0, z: 0}
+  m_TargetPosition: {x: 0, y: 0, z: 0}
+  m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -2219,7 +2219,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -1, z: -1.330001}
   m_LocalScale: {x: 100, y: 100.00003, z: 100.00003}
   m_Children:
-  - {fileID: 4043312381349526878}
+  - {fileID: 3457412789609855319}
   m_Father: {fileID: 7299525056394026797}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2623,7 +2623,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 12
+    limit: 15
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -2648,8 +2648,8 @@ ConfigurableJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_TargetPosition: {x: -75, y: 0, z: 0}
-  m_TargetVelocity: {x: 1, y: 0, z: 0}
+  m_TargetPosition: {x: 0, y: 0, z: 0}
+  m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -2670,9 +2670,9 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 60
-    positionDamper: 20
-    maximumForce: 2
+    positionSpring: 50
+    positionDamper: 30
+    maximumForce: 1
   m_AngularYZDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -2723,7 +2723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 0.5
-  deadZone: 0.3
+  deadZone: 0.45
 --- !u!114 &1661793448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4794,11 +4794,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809696143456014702}
-  m_LocalRotation: {x: -0, y: -0.70710665, z: 0, w: 0.7071069}
-  m_LocalPosition: {x: -0, y: 0, z: 0.04}
+  m_LocalRotation: {x: -0.000000029802315, y: -0.70710665, z: 0.000000029802315, w: 0.7071069}
+  m_LocalPosition: {x: 0, y: -0.013299995, z: 0.040000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4043312381349526878}
+  m_Children:
+  - {fileID: 4043312381349526878}
+  m_Father: {fileID: 1526385991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3496187289950253001
@@ -5041,12 +5042,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701005540000452596}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.013300006, z: 0}
+  m_LocalRotation: {x: 0.000000029802319, y: 0.7071067, z: -0.000000029802319, w: 0.70710695}
+  m_LocalPosition: {x: -0.04000001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3457412789609855319}
-  m_Father: {fileID: 1526385991}
+  m_Children: []
+  m_Father: {fileID: 3457412789609855319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4070627842817778363
