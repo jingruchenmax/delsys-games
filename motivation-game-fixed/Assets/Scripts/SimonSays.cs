@@ -81,26 +81,27 @@ using Buttons;
             {
                 Destroy(gameObject);
             }
-        }
-
-        void Start()
+        _interactionBehavior = new List<InteractionBehavior>();
+        // Add ButtonRenderer to the list
+        for (int i = 0; i < buttons.Length; i++)
         {
-            _interactionBehavior = new List<InteractionBehavior>();
-            // Add ButtonRenderer to the list
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                InteractionBehavior ib = buttons[i].GetComponentInChildren<InteractionBehavior>();
-                ib.buttonId = i;
-                _interactionBehavior.Add(ib);
-            }
-
-            if (patternMode == InteractionPatternMode.SetPattern)
-            {
-                totalStages = customGame.Stages.Length;
-            }
+            InteractionBehavior ib = buttons[i].GetComponentInChildren<InteractionBehavior>();
+            ib.buttonId = i;
+            _interactionBehavior.Add(ib);
         }
-        
-        public void StartGame()
+
+        if (patternMode == InteractionPatternMode.SetPattern)
+        {
+            totalStages = customGame.Stages.Length;
+        }
+    }
+
+    void Start()
+    {
+        StartGame();
+    }
+
+    public void StartGame()
         {
             rounds = 0;
             stage = 0;
@@ -165,7 +166,7 @@ using Buttons;
         {
             Debug.Log("Button Check" + ib.buttonId);
 
-            if (ib == _buttonOrder[counter])
+        if (ib == _buttonOrder[counter])
             {
                 counter++;
                 if (counter == _buttonOrder.Count)
@@ -215,10 +216,14 @@ using Buttons;
             {
                 await Task.Delay(10);
                 _interactionBehavior[i].interactionRenderer.Highlight();
-                await Task.Delay(100);
+                await Task.Delay(10);
                 _interactionBehavior[i].interactionRenderer.Default();
             }
-            await Task.Delay(1000);
+            for (int i = 0; i < _interactionBehavior.Count; i++)
+            {
+                _interactionBehavior[i].interactionRenderer.Restart();
+            }
+        await Task.Delay(2000);
             _buttonOrder.Clear();
             sequenceVisualizer.ClearFullSequenceDisplay();
             AddObject();
@@ -235,7 +240,7 @@ using Buttons;
                 roundsPerStage = customGame.Stages[stage - 1].sequence.GetNumberOfRounds();
             }
             DisableButtons();
-            await Task.Delay(1000);
+            await Task.Delay(2000);
             _buttonOrder.Clear();
             sequenceVisualizer.ClearFullSequenceDisplay();
             AddObject();

@@ -32,7 +32,6 @@ public class InteractionBehavior : MonoBehaviour
     }
 
     public void CheckObject()
-
     {
         simonSays.CheckObject(this);
     }
