@@ -11,17 +11,21 @@ public void RaycastDetection()
       
         if (Physics.Raycast(ray, out hit, 100))
         {
-            if (hit.transform.name == "Left Foot" || hit.transform.name == "Right Foot" )
+            if (hit.transform.name == "Left Foot" || hit.transform.name == "Right Foot")
             {
-                hit.transform.localEulerAngles -= new Vector3(12, 0, 0);
+                hit.transform.localEulerAngles += new Vector3(-15, 0, 0);
+            }
+            else if(hit.transform.name == "Left Lever" || hit.transform.name == "Right Lever")
+            {
+                hit.transform.localEulerAngles += new Vector3(10, 0, 0);
             }
             else if (hit.transform.name == "Handle")
             {
-                hit.transform.localEulerAngles -= new Vector3(0, 0, 1.3f);
+                hit.transform.localPosition += new Vector3(0, 0, 0.6f);
             }
             else
             {
-                hit.transform.localPosition -= new Vector3(0, 0, -0.08f);
+                hit.transform.localPosition += new Vector3(0, 0, 0.08f);
             }          
             
         }
