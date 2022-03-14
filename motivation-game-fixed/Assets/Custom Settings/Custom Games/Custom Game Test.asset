@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: This is a test that the dewv team used to see if sequences are working
   Stages:
-  - name: Test Sequence
-    sequence: {fileID: 11400000, guid: ea5de9a2af8a2444db9eff757428c443, type: 2}
+  - name: Tutorial Test
+    sequence: {fileID: 11400000, guid: bbe4b2bb2fd55fc49895c97d55ca7f4b, type: 2}
   - name: Small Yellow
-    sequence: {fileID: 11400000, guid: 83e437f8c0243b84298397b2eb7b3e02, type: 2}
+    sequence: {fileID: 11400000, guid: 0842b61118bf6d14ca299b69a92b3970, type: 2}
   - name: Test Sequence
-    sequence: {fileID: 11400000, guid: ea5de9a2af8a2444db9eff757428c443, type: 2}
+    sequence: {fileID: 11400000, guid: 2d30af15f0afb274daf8406dc54e56e9, type: 2}

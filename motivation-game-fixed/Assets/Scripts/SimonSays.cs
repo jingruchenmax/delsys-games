@@ -22,6 +22,7 @@ using Buttons;
         public InteractionPatternMode patternMode;
 
         [Header("Core")]
+        public bool skipTutorial;
         public Zone[] Zones; //Should be in order of and equal to the enum of groups (Buttons.Group)
         public GameObject[] buttons;
         public Text currentRounds;
@@ -98,7 +99,7 @@ using Buttons;
 
     void Start()
     {
-        StartGame();
+        //StartGame();
     }
 
     public void StartGame()
@@ -236,8 +237,18 @@ using Buttons;
             round = 0;
             if (patternMode == InteractionPatternMode.SetPattern)
             {
-                fixedButtonOrder = customGame.Stages[stage - 1].sequence.GenerateSequence(_interactionBehavior, Zones);
-                roundsPerStage = customGame.Stages[stage - 1].sequence.GetNumberOfRounds();
+                if (customGame.Stages[stage - 1].sequence.isTutorial && skipTutorial)
+                {
+                    Debug.Log("A tutorial stage was skipped");
+                    StartNewStage();
+                    return;
+                }
+                else
+                {
+                    fixedButtonOrder = customGame.Stages[stage - 1].sequence.GenerateSequence(_interactionBehavior, Zones);
+                    roundsPerStage = customGame.Stages[stage - 1].sequence.GetNumberOfRounds();
+                }
+                    
             }
             DisableButtons();
             await Task.Delay(2000);

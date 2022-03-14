@@ -10,9 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a48ce37bca15c4c9b9be8d3b4d9e57, type: 3}
-  m_Name: New Sequence
+  m_Name: Test Sequence
   m_EditorClassIdentifier: 
-  sequenceName: New Sequence
+  sequenceName: Test Sequence
   isTutorial: 0
   Description: Its a sequence
-  sequence: []
+  sequence:
+  - name: Left_Arm Round_Red
+    group: 0
+    button: 0
+    buttonNumber: 0
+  - name: Right_Arm Round_Green
+    group: 1
+    button: 1
+    buttonNumber: 0
+  - name: Right_Arm Stop
+    group: 1
+    button: 2
+    buttonNumber: 0
+  - name: Left_Arm Yellow_Rectangle
+    group: 0
+    button: 3
+    buttonNumber: 0

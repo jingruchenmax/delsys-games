@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Small Yellow
   m_EditorClassIdentifier: 
   sequenceName: Small Yellow
+  isTutorial: 0
   Description: Its a sequence
   sequence:
   - name: Right_Arm Yellow_Rectangle
