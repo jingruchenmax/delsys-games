@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RimRenderer : MonoBehaviour
 {
-    public float rimRange = 0.67f;
+    public float rimRange = 0.43f;
     Material planetMaterial;
     // currently changed to work with emission color
     // Start is called before the first frame update

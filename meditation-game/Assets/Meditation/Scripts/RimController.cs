@@ -12,7 +12,7 @@ public class RimController : MonoBehaviour
     void Start()
     {
         rimRenderers = GetComponentsInChildren<RimRenderer>();
-        range = 0.67f;
+        range = 0.43f;
         deltaRange = (AnimationVariables.speed / 10f);
     }
 
@@ -27,8 +27,8 @@ public class RimController : MonoBehaviour
     public void RimRendererInhale()
     {
         range -= deltaRange;
-        Debug.Log("inhale");
-        range = Mathf.Clamp(range, 0.29f, 0.67f);
+        //Debug.Log("inhale");
+        range = Mathf.Clamp(range, 0.2f, 0.43f);
         foreach (RimRenderer rr in rimRenderers)
         {
             rr.RimSetRange(range);
@@ -39,8 +39,8 @@ public class RimController : MonoBehaviour
     public void RimRendererExhale()
     {
         range += deltaRange;
-        Debug.Log("exhale");
-        range = Mathf.Clamp(range, 0.29f, 0.67f);
+        //Debug.Log("exhale");
+        range = Mathf.Clamp(range, 0.2f, 0.43f);
         foreach (RimRenderer rr in rimRenderers)
         {
             rr.RimSetRange(range);
