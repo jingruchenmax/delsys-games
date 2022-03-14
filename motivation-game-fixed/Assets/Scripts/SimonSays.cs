@@ -223,7 +223,7 @@ using Buttons;
             {
                 _interactionBehavior[i].interactionRenderer.Restart();
             }
-        await Task.Delay(2000);
+            await Task.Delay(2000);
             _buttonOrder.Clear();
             sequenceVisualizer.ClearFullSequenceDisplay();
             AddObject();
@@ -266,6 +266,11 @@ using Buttons;
             sequenceVisualizer.SetTitleText("Push the button");
             EnableButtons();
         }
+
+    private void OnApplicationQuit()
+    {
+        StopAllCoroutines();
     }
+}
 
 
