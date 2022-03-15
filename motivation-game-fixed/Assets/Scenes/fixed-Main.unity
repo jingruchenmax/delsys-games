@@ -410,7 +410,7 @@ MonoBehaviour:
     group: 2
     button: 6
     buttonNumber: 0
-  icon: {fileID: 21300000, guid: e65d05c3a7771a64a832404b332aa860, type: 3}
+  icon: {fileID: 21300000, guid: 6df03b79e1a78184f8d3ba25c5029547, type: 3}
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -691,7 +691,7 @@ MonoBehaviour:
     group: 0
     button: 5
     buttonNumber: 0
-  icon: {fileID: 21300000, guid: 57fc013327e9ce44ca374d2e8176a7a9, type: 3}
+  icon: {fileID: 21300000, guid: 0061c31e30706e245a31f2c19f828dfa, type: 3}
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -1421,7 +1421,7 @@ MonoBehaviour:
     group: 3
     button: 6
     buttonNumber: 0
-  icon: {fileID: 21300000, guid: 9a4d4fb44808c164ca33606790bd4afc, type: 3}
+  icon: {fileID: 21300000, guid: 10fbbf614c3746944b2d148974fc0681, type: 3}
   buttonId: 0
   onPressed:
     m_PersistentCalls:
@@ -2745,7 +2745,7 @@ MonoBehaviour:
     group: 1
     button: 5
     buttonNumber: 0
-  icon: {fileID: 21300000, guid: 57fc013327e9ce44ca374d2e8176a7a9, type: 3}
+  icon: {fileID: 21300000, guid: 4dc4e60a73644d6408a07183c82dbe78, type: 3}
   buttonId: 0
   onPressed:
     m_PersistentCalls:
