@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Meditation/Main.unity
-    guid: 33d1d608ebad12f4491d5fb32615d2f9
+    path: Assets/Meditation/Updated-Main.unity
+    guid: c835d7ef31b88b149ad39dd0b6cd25ba
   m_configObjects:
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: d75e1b892e8d55348acb65c9af05dcec,
       type: 2}

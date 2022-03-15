@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    public bool independentChild = true;
-    public float speed = 10f;
+    public bool independentChild;
+    public float speed;
     
     // Start is called before the first frame update
     void Start()
@@ -21,11 +21,11 @@ public class Rotation : MonoBehaviour
             Quaternion savedRotation = this.gameObject.transform.GetChild(1).transform.localRotation;
 
             Vector3 v = transform.localRotation.eulerAngles;
-            transform.localRotation = Quaternion.Euler(v.x, v.y + -80 * Time.deltaTime, v.z);
+            transform.localRotation = Quaternion.Euler(v.x, v.y + (speed) * Time.deltaTime, v.z);
 
             this.gameObject.transform.GetChild(1).transform.localRotation = savedRotation;
             Vector3 u = this.gameObject.transform.GetChild(1).transform.localRotation.eulerAngles;
-            this.gameObject.transform.GetChild(1).transform.localRotation = Quaternion.Euler(u.x, u.y, u.z + 30 * Time.deltaTime);
+            this.gameObject.transform.GetChild(1).transform.localRotation = Quaternion.Euler(u.x, u.y, u.z + (speed/2f) * Time.deltaTime);
         } else
         {
             Vector3 v = transform.rotation.eulerAngles;
