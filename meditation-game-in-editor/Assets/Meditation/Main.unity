@@ -7736,7 +7736,6 @@ GameObject:
   - component: {fileID: 983845099}
   - component: {fileID: 983845102}
   - component: {fileID: 983845101}
-  - component: {fileID: 983845100}
   m_Layer: 0
   m_Name: Simple Planet (3)
   m_TagString: Untagged
@@ -7758,19 +7757,6 @@ Transform:
   m_Father: {fileID: 1473414335}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &983845100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983845098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d78f82646189ca4bab51ca51165eeb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selfRevolutionSpeed: 1
 --- !u!23 &983845101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14464,7 +14450,6 @@ GameObject:
   - component: {fileID: 1588965696}
   - component: {fileID: 1588965701}
   - component: {fileID: 1588965700}
-  - component: {fileID: 1588965698}
   m_Layer: 0
   m_Name: Simple Planet
   m_TagString: Untagged
@@ -14486,19 +14471,6 @@ Transform:
   m_Father: {fileID: 2014352998}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1588965698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1588965695}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d78f82646189ca4bab51ca51165eeb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selfRevolutionSpeed: 1
 --- !u!23 &1588965700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15050,7 +15022,6 @@ GameObject:
   - component: {fileID: 1856068210}
   - component: {fileID: 1856068213}
   - component: {fileID: 1856068212}
-  - component: {fileID: 1856068211}
   m_Layer: 0
   m_Name: Simple Planet (4)
   m_TagString: Untagged
@@ -15072,19 +15043,6 @@ Transform:
   m_Father: {fileID: 1272732442}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1856068211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856068209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d78f82646189ca4bab51ca51165eeb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selfRevolutionSpeed: 5
 --- !u!23 &1856068212
 MeshRenderer:
   m_ObjectHideFlags: 0

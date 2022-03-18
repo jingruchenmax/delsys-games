@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     public UnityEvent onHold;
     public UnityEvent onExhale;
 
-    [Header("Meditation")]
+    [Header("Meditation Guide")]
     public UnityEvent onEveryFrame;
 
     [HideInInspector]
@@ -41,7 +41,11 @@ public class GameController : MonoBehaviour
     void FixedUpdate()
     {
         onEveryFrame.Invoke();
+
+        //in editor simulation
+    #if UNITY_EDITOR
         RespirationInput();
+    #endif
     }
 
 
