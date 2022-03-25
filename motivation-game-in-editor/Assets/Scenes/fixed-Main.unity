@@ -5451,7 +5451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba4be8a3a0f32d4792e30811a8e8012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.5
+  threshold: 0.8
   deadZone: 0.01
 --- !u!114 &5295016060758496613
 MonoBehaviour:
@@ -6071,7 +6071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba4be8a3a0f32d4792e30811a8e8012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.5
+  threshold: 0.8
   deadZone: 0.01
 --- !u!153 &5505810231268567373
 ConfigurableJoint:
@@ -6264,7 +6264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba4be8a3a0f32d4792e30811a8e8012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.5
+  threshold: 0.8
   deadZone: 0.01
 --- !u!114 &5552401944614965377
 MonoBehaviour:
