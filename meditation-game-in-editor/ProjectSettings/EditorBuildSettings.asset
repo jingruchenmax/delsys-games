@@ -9,7 +9,11 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Meditation/Updated-Main.unity
+=======
+    path: Assets/Meditation/Main.unity
+>>>>>>> cdeceb498722f2645a6806bc702392345004d750
     guid: c835d7ef31b88b149ad39dd0b6cd25ba
   m_configObjects:
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: d75e1b892e8d55348acb65c9af05dcec,
